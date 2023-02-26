@@ -53,14 +53,14 @@ function App() {
               <h2>Syntax Basics</h2>
               <p>Understanding statements, variable naming, whitespace...</p>
           </section> */}
-          {/* <section>
+          <section>
               <h2>Operators</h2>
               <p>Operators allow you to manipulate values...</p>
           </section>
           <section>
               <h2>Conditional Code</h2>
               <p>Sometimes you only want to run a block of code under certain conditions...</p>
-          </section> */}
+          </section>
         </article>
       </main>
       
