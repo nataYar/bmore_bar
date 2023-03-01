@@ -1,8 +1,63 @@
+.blob {
+  position: absolute;
+  width: 1500px;
+  height: 1500px;
+  transform: translate(-20%, -10%);
+  border-radius: 50%;
+  opacity: 1;
+  z-index: 7;
+  transition: all .5s ease-in;
+  background-color: hsl(0, 0%, 4%);
+}
+
+.blob-hidden {
+  width: 1500px;
+  height: 1500px;
+  transform: translate(10%, -100%);
+  opacity: 0.6;
+}
+
+.nav-wrapper {
+  position: fixed;
+  left: 100vw;
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  margin: 0%;
+  padding: 0%;
+  z-index: 8;
+  opacity: 0;
+}
+
+.active {
+  opacity: 1;
+  left: 0;
+  transition: all .5s ease-out;
+  transition-delay: .4s;
+}
+
+.nav-wrapper li {
+  list-style-type: none;
+  padding: 5% 0;
+  text-decoration: none;
+}
+
+.nav-item {
+  color: hsl(24, 8%, 88%);
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+
+/* NAV ICON */
 .nav-icon{
     width: 30px;
     height: 30px;
     position: absolute;
-    z-index: 2;
+    z-index: 10;
     transition: .1s;
     right: 0px;
     margin: 15px 15px;
@@ -88,3 +143,38 @@
     left: 18px;
     bottom: 6px;
   }
+
+  /* for TABLETS and LAPTOPS */
+@media screen and (min-width: 786px) {
+
+  .nav-icon { display: none }
+
+  /* .logo {left: 4.37rem } */
+
+  .nav-item {
+      color: rgb(248, 248, 248);
+      font-size: 1rem;
+      height: 100%;
+  }
+  
+  .nav-wrapper {
+      position: fixed;
+      right: 4.37rem ;
+      z-index: 999;
+      height: 3.2rem;
+      top: 0;
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: flex-end;
+      background-color: transparent;
+      transition: all .7s ease-in-out;
+  }
+  
+  .nav-wrapper li {
+      padding: 0%;
+      margin-left:  2%;
+      list-style-type: none;
+  }
+  
+}

@@ -1,4 +1,3 @@
-
 * {
   box-sizing: border-box;
 }
@@ -35,7 +34,7 @@ header {
   left: 0%;
   right: 0%;
   bottom: 0%;
-  background-position: bottom right;
+  background-position: bottom left;
   transform-origin: center;
   /* clip-path: polygon(50% 10%, 75% 25%, 50% 40%, 25% 25%); */
   background-image: url("../images/bk_dark_35.webp");
@@ -44,9 +43,9 @@ header {
   width: auto;
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover;
-  /* -webkit-background-size: cover;
+  -webkit-background-size: cover;
   -moz-background-size: cover;
-  -o-background-size: cover; */
+  -o-background-size: cover;
 }
 
 /* slide 1  */
@@ -151,6 +150,15 @@ header {
 }
 
 /* slide 2  */
+.slide2 {
+  background-color: #111111;
+  margin: 20% 5%;
+}
+
+.address {
+
+}
+
 .workday {
   color: rgb(255, 255, 255);
   /* background-color: blue; */
@@ -158,7 +166,7 @@ header {
 }
 
 .workday > div:first-child {
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   display: block;
   width: 90px;
   margin-right: 10px;
@@ -166,11 +174,12 @@ header {
 
 .google-maps {
   overflow: hidden;
-    padding-bottom: 56.25%;
-    position: relative;
-    width: 100%;
-    z-index: 3;
-    border-radius: 3px;
+  padding-bottom: 56.25%;
+  position: relative;
+  width: 100%;
+  z-index: 3;
+  border-radius: 3px;
+  margin: 10% 0% 15% 0%;
 }
 
 .google-maps iframe {
@@ -187,4 +196,15 @@ footer {
   height: 25vh;
   width: 100vw;
   background-color: rgb(18, 18, 18);
+}
+
+@media screen and (min-width: 768px){
+  .google-maps {
+    overflow: hidden;
+    padding-bottom: 25%;
+    position: relative;
+    width: 40%;
+    z-index: 3;
+    border-radius: 3px;
+  }
 }

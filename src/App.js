@@ -1,21 +1,21 @@
 import React from "react";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
+import Nav  from './Nav'
+import Animations from "./animations.js";
 import './Styles/App.css';
 import './Styles/styles.css';
-import './Styles/nav.css';
-import Animations from "./animations.js";
 import { default as logo } from './images/logo_white.png';
+
 
 function App() {
   const [navClicked, setNavclicked] = useState(false)
   const slide1Ref = useRef();
   const slide2Ref = useRef();
   const textSlide1Ref = useRef();
-  
-  const navRef = useRef(); 
+
   const addressContainerRef = useRef();
 
-  function openNav () {
+  function toggleNav () {
     setNavclicked(!navClicked)
     console.log('You clicked nav.');
   }
@@ -24,28 +24,11 @@ function App() {
     <main className="app">
       <Animations slide1Ref={slide1Ref}  slide2Ref={slide2Ref} addressContainerRef={addressContainerRef} textSlide1Ref={textSlide1Ref} />
       <header>
-        <div className={ navClicked ? 'icon nav-icon open' : 'icon nav-icon'}
-         ref={navRef} onClick={() => openNav()}>
-         <span ></span>
-          <span ></span>
-          <span ></span>
-          
-          <span ></span>
-          <span ></span>
-          <span ></span>
-          
-          <span ></span>
-          <span ></span>
-          <span ></span>
-          </div>
+        <Nav toggleNavCallback={toggleNav} navClicked={navClicked} />
       </header>
-      {/* <div className="black_background"/> */}
       <div className="app_background"></div>
       <article className='app_content'>
-
         <section className="slide-100-100 slide1 flex-col-center" ref={slide1Ref} >
-          {/* <h1>JavaScript Basics</h1> */}
-          
           <h1 className='slide1_logo_container'>
             <img className='logo' src={logo} alt="bmore protein bar" />
           </h1>
@@ -66,16 +49,12 @@ function App() {
           </div>
         </section>
 
-        <section className='slide-100-100 slide2 flex-col-left padding-5' id='slide2' ref={slide2Ref}>
-          <div className=""  ref={addressContainerRef}>
+        <section className='slide2 flex-col-left padding-mid radius-mid' id='slide2' ref={slide2Ref}>
+          <div className="address"  ref={addressContainerRef}>
             <p className="popup-text font-regular ">
-                <span>Phone:</span>
-                <br/>
                 (213) 306-0257
               </p>
             <p className="popup-text font-regular ">
-              <span>Address:</span>
-              <br/> 
               707 E Ocean Blvd D Long Beach, CA 90802
               </p>
             </div>
@@ -86,6 +65,7 @@ function App() {
           </div>
          
           <div className="schedule width-100">
+            <h4>HOURS</h4>
             <div className="flex-row  workday">
               <div>Mon-Tue</div> 
               <div className="time">Closed</div>

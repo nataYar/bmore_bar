@@ -34,5 +34,13 @@
   }
   
   .padding-5 {
-    padding: 5vh;
+    padding: 5%;
+  }
+
+  .padding-mid {
+    padding: 4%;
+  }
+
+  .radius-mid {
+    border-radius: 8px;
   }

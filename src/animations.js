@@ -42,14 +42,13 @@ const Animations = ({slide1Ref, textSlide1Ref, slide2Ref, addressContainerRef })
             scrub: true,
         }
     })
-    .fromTo('.app_background', {
-        // backgroundPosition: '100% 100%', 
-        // scale: 1
-    },
+    .to('.app_background',
     { 
-    //   backgroundPosition: '70% 100%', 
-    //   scale: 1.2, 
+      backgroundPosition: '15% 20%', 
+      scale: 1.3,
+      duration: 1
     })
+
     const ctx2 = gsap.context(() => {
     gsap.timeline({ 
         defaults: {
@@ -58,7 +57,8 @@ const Animations = ({slide1Ref, textSlide1Ref, slide2Ref, addressContainerRef })
         },
         scrollTrigger: {
             trigger: addressContainerRef.current,
-            start: '0% 100%',
+            start: '-15% 100%',
+            // markers: true
         }
     })
     .fromTo(".popup-text", { y: '20px', opacity: 0 }, { y: '0', opacity: 1, stagger: .2 })
