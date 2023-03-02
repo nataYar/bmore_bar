@@ -152,11 +152,9 @@ header {
 /* slide 2  */
 .slide2 {
   background-color: #111111;
-  margin: 20% 5%;
-}
-
-.address {
-
+  margin: 20% 0%;
+  display: flex;
+  flex-flow: column wrap;
 }
 
 .workday {
@@ -166,7 +164,6 @@ header {
 }
 
 .workday > div:first-child {
-  /* text-transform: uppercase; */
   display: block;
   width: 90px;
   margin-right: 10px;
@@ -201,10 +198,25 @@ footer {
 @media screen and (min-width: 768px){
   .google-maps {
     overflow: hidden;
-    padding-bottom: 25%;
+    padding-bottom: 40%;
     position: relative;
-    width: 40%;
+    width: 70%;
     z-index: 3;
     border-radius: 3px;
   }
+
+  .slide2 {
+    background-color: #111111;
+    margin: 20% 0%;
+    display: flex;
+    flex-flow: row-reverse wrap;
+    justify-content: center;
+    align-items:flex-start;
+    gap: 2%;
+   
+  }
+  .location, .schedule {
+    width: 40%;
+  }
+
 }
