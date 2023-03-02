@@ -1,25 +1,18 @@
+/* visible */
 .blob {
   position: absolute;
   width: 1500px;
   height: 1500px;
-  transform: translate(-20%, -10%);
-  border-radius: 50%;
-  opacity: 1;
-  z-index: 7;
-  transition: all .8s ease-in;
-  background-color: hsl(0, 0%, 4%);
-}
-
-.blob-hidden {
-  width: 1500px;
-  height: 1500px;
   transform: translate(10%, -100%);
-  opacity: 0.6;
+  border-radius: 50%;
+  opacity: .9;
+  z-index: 7;
+  background-color: hsl(0, 0%, 4%);
 }
 
 .nav-wrapper {
   position: fixed;
-  left: 100vw;
+  left: 50px;
   width: 100vw;
   height: 100vh;
   align-items: center;
@@ -28,13 +21,6 @@
   padding: 0%;
   z-index: 8;
   opacity: 0;
-}
-
-.active {
-  opacity: 1;
-  left: 0;
-  transition: all .5s ease-out;
-  transition-delay: .4s;
 }
 
 .nav-wrapper li {

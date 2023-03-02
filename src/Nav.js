@@ -24,34 +24,36 @@ const Nav = ({ toggleNavCallback, navClicked }) => {
             <span ></span>
             </div>
 
-        <div className={ navClicked  ? 'blob' : 'blob blob-hidden' } ></div>
-        <ul className={ navClicked  ? 'nav-wrapper flex-col-center active' : 'nav-wrapper' } >
-                <li onClick={ toggleNavCallback }>
-                    <a href="#location" className='nav-item nav-about'>
-                        location
-                    </a>
-                    </li>
-                <li onClick={ toggleNavCallback }>
-                    <a href="#hours" className='nav-item nav-projects'>
-                        hours
-                    </a>
-                    </li>
-                <li onClick={ toggleNavCallback }>
-                    <a href="#about" className='nav-item nav-footer'>
-                        about
-                    </a>
+            {/* <div className={ navClicked  ? 'blob' : 'blob blob-hidden' } ></div> */}
+        <div className='blob' ></div>
+        <ul className='nav-wrapper flex-col-center'>
+        {/* <ul className={ navClicked  ? 'nav-wrapper flex-col-center active' : 'nav-wrapper' } > */}
+            <li onClick={ toggleNavCallback }>
+                <a href="#location" className='nav-item nav-about'>
+                    location
+                </a>
                 </li>
-                <li onClick={ toggleNavCallback }>
-                    <a href="#menu" className='nav-item nav-footer'>
-                        Menu
-                    </a>
+            <li onClick={ toggleNavCallback }>
+                <a href="#hours" className='nav-item nav-projects'>
+                    hours
+                </a>
                 </li>
-                <li onClick={ toggleNavCallback }>
-                    <a href="#contact_us" className='nav-item nav-footer'>
-                        contact us
-                    </a>
-                </li>
-            </ul>
+            <li onClick={ toggleNavCallback }>
+                <a href="#about" className='nav-item nav-footer'>
+                    about
+                </a>
+            </li>
+            <li onClick={ toggleNavCallback }>
+                <a href="#menu" className='nav-item nav-footer'>
+                    Menu
+                </a>
+            </li>
+            <li onClick={ toggleNavCallback }>
+                <a href="#contact_us" className='nav-item nav-footer'>
+                    contact us
+                </a>
+            </li>
+        </ul>
     </nav>
   )
 }

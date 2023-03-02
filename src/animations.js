@@ -1,11 +1,42 @@
-import { useLayoutEffect, useRef } from "react";
+import { useEffect, useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
-const Animations = ({ appRef, slide1Ref, textSlide1Ref, slide2Ref, addressContainerRef , hoursRef}) => {
+const Animations = ({ navClicked, appRef, slide1Ref, textSlide1Ref, slide2Ref, addressContainerRef , hoursRef}) => {
 
-  const popupTl = useRef();
+  const navTl = useRef();
+
+  useEffect(() => {
+    //  navigation menu
+    // const nv = gsap.utils.selector(".blob");
+    navTl.current = gsap.timeline({
+      defaults: {
+        duration: .7,
+        ease: "power1.in"
+        },
+      paused: true
+    })
+
+    navTl.current
+    .to(".blob", {
+      x: '-20%',
+      y: '-10%',
+      // ease: "",
+      opacity: 1, 
+      // duration: .9
+    })
+    .to(".nav-wrapper", {
+      opacity: 1,
+      x: '-50px',
+      opacity: 1, 
+    }, "-=.5")
+  }, [])
+
+  useEffect(() => {
+    // navClicked ? console.log('cl'): navTl.current.reverse()
+    navClicked ? navTl.current.play() : navTl.current.reverse()
+  }, [navClicked])
 
   useLayoutEffect(() => {
     // let slide = gsap.utils.selector(".slide1");
@@ -21,6 +52,7 @@ const Animations = ({ appRef, slide1Ref, textSlide1Ref, slide2Ref, addressContai
             scrollTrigger: {
                 trigger: el,
                 start: '-10% 100%',
+                //end: "+=100"
             }
           })
           .fromTo(el, { y: '120px', opacity: 0 }, { y: '0', opacity: 1, stagger: .3}, );

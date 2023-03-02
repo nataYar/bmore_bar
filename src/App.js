@@ -17,12 +17,11 @@ function App() {
 
   function toggleNav () {
     setNavclicked(!navClicked)
-    console.log('You clicked nav.');
   }
 
   return (
     <main className="app">
-      <Animations appRef={appRef} slide1Ref={slide1Ref}  addressContainerRef={addressContainerRef} textSlide1Ref={textSlide1Ref} hoursRef={hoursRef}/>
+      <Animations navClicked={navClicked} appRef={appRef} slide1Ref={slide1Ref}  addressContainerRef={addressContainerRef} textSlide1Ref={textSlide1Ref} hoursRef={hoursRef}/>
       <header>
         <Nav toggleNavCallback={toggleNav} navClicked={navClicked} />
       </header>
