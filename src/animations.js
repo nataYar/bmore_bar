@@ -3,13 +3,14 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
-const Animations = ({ navClicked, appRef, slide1Ref, textSlide1Ref, slide2Ref, addressContainerRef , hoursRef}) => {
+const Animations = ({ width, navClicked, appRef, slide1Ref, textSlide1Ref, slide2Ref, addressContainerRef , hoursRef}) => {
 
   const navTl = useRef();
+  const backgroundTl = useRef();
 
-  useEffect(() => {
-    //  navigation menu
-    // const nv = gsap.utils.selector(".blob");
+// let slide = gsap.utils.selector(".slide1");
+    // const boxes = gsap.utils.toArray(".box");
+  useLayoutEffect(() => {
     navTl.current = gsap.timeline({
       defaults: {
         duration: .7,
@@ -22,52 +23,83 @@ const Animations = ({ navClicked, appRef, slide1Ref, textSlide1Ref, slide2Ref, a
     .to(".blob", {
       x: '-20%',
       y: '-10%',
-      // ease: "",
       opacity: 1, 
-      // duration: .9
     })
     .to(".nav-wrapper", {
-      opacity: 1,
-      x: '-50px',
-      opacity: 1, 
+      // opacity: 1,
+      x: '-100%',
     }, "-=.5")
-  }, [])
+    .to(".nav-wrapper", {
+      opacity: 1,
+    }, "-=.4")
 
-  useEffect(() => {
-    // navClicked ? console.log('cl'): navTl.current.reverse()
-    navClicked ? navTl.current.play() : navTl.current.reverse()
-  }, [navClicked])
-
-  useLayoutEffect(() => {
-    // let slide = gsap.utils.selector(".slide1");
-    // const boxes = gsap.utils.toArray(".box");
-
-      const popEl = gsap.utils.toArray('.popup-anim');
+    // four each line popping from y:120
+    const popEl = gsap.utils.toArray('.popup-anim');
       popEl.forEach((el) => {
         gsap.timeline({ 
           defaults: {
-            duration: 1,
-            ease: "power1.inout"
+            duration: 1.2,
+            ease: "power4.inout"
             },
             scrollTrigger: {
                 trigger: el,
-                start: '-10% 100%',
-                //end: "+=100"
+                start: 'top 90%',
+                // markers: true,
+          
             }
           })
-          .fromTo(el, { y: '120px', opacity: 0 }, { y: '0', opacity: 1, stagger: .3}, );
+          .fromTo(el, { y: '20px', opacity: 0 }, { y: '0', opacity: 1 }, );
         });
 
+      // OPACITY 0 => 1 
+      const opacityEl = gsap.utils.toArray('.opacity-anim');
+      opacityEl.forEach((el) => {
+          gsap.timeline({ 
+            defaults: {
+              duration: 1,
+              ease: "power1.in"
+              },
+              scrollTrigger: {
+                  trigger: el,
+                  start: 'top 90%',
+                  // markers: true,
+              }
+            })
+            .fromTo(el, { opacity: 0 }, { opacity: 1 } );
+          });
+
+    // ON LOAD animation
     const sslide1backgroung = gsap.timeline({ 
-        defaults: {
+        defaults: {  
         duration: 1.2,
         ease: "power4.inout"
         } 
     })
-    .fromTo('.app_background', { scale: 1.5,  opacity: 0 }, {scale: 1,  opacity: 1 })
-    .fromTo('.logo', { y: '60px', scale: .5, opacity: 0, }, { scale: 1, y: '0', opacity: 1}, "<")
+    .fromTo('.app_background', { scale: 2.5,  opacity: 0 }, {scale: 1, y:'-100', opacity: 1 })
+    .fromTo('.logo', { y: '60px', scale: .5, opacity: 0, }, { scale: 1.1, y: '0', opacity: 1}, "<")
     .fromTo(".popup-slide1", { y: '20px', opacity: 0 }, { y: '0', opacity: 1, stagger: .3 });
-  }, []);
+
+    backgroundTl.current = gsap.timeline({
+      defaults: {
+        duration: 2,
+        // ease: "power1"
+        },
+        scrollTrigger: {
+          trigger: ".slide2",
+          start: '0% 100%', 
+          scrub: true,
+      }
+    })
+
+    backgroundTl.current
+    .to('.app_background', { scale: 1,  y: '30px', x: '-140px'})
+
+  }, [])
+
+
+  useEffect(() => {
+    navClicked && width < 768 ? navTl.current.play() : navTl.current.reverse()
+  }, [navClicked])
 
 
   useLayoutEffect(() => {

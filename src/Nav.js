@@ -29,6 +29,11 @@ const Nav = ({ toggleNavCallback, navClicked }) => {
         <ul className='nav-wrapper flex-col-center'>
         {/* <ul className={ navClicked  ? 'nav-wrapper flex-col-center active' : 'nav-wrapper' } > */}
             <li onClick={ toggleNavCallback }>
+                <a href="#contacts" className='nav-item nav-footer'>
+                    contacts
+                </a>
+                </li>
+            <li onClick={ toggleNavCallback }>
                 <a href="#location" className='nav-item nav-about'>
                     location
                 </a>
@@ -46,11 +51,6 @@ const Nav = ({ toggleNavCallback, navClicked }) => {
             <li onClick={ toggleNavCallback }>
                 <a href="#menu" className='nav-item nav-footer'>
                     Menu
-                </a>
-            </li>
-            <li onClick={ toggleNavCallback }>
-                <a href="#contact_us" className='nav-item nav-footer'>
-                    contact us
                 </a>
             </li>
         </ul>

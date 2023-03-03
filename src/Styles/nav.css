@@ -1,3 +1,5 @@
+@import './styles.css';
+
 /* visible */
 .blob {
   position: absolute;
@@ -12,7 +14,7 @@
 
 .nav-wrapper {
   position: fixed;
-  left: 50px;
+  left: 100%;
   width: 100vw;
   height: 100vh;
   align-items: center;
@@ -27,6 +29,15 @@
   list-style-type: none;
   padding: 5% 0;
   text-decoration: none;
+}
+
+a.nav-item:hover {
+  color: white;
+}
+
+a.nav-item {
+  transition: all .3s ease-in;
+  color: var(--orange-light);
 }
 
 .nav-item {
@@ -143,24 +154,44 @@
       height: 100%;
   }
   
+  /* position: fixed;
+  left: 100%;
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  margin: 0%;
+  padding: 0%;
+  z-index: 8;
+  opacity: 0; */
+
+
   .nav-wrapper {
-      position: fixed;
-      right: 4.37rem ;
-      z-index: 999;
-      height: 3.2rem;
-      top: 0;
-      display: flex;
-      flex-flow: row nowrap;
-      align-items: center;
-      justify-content: flex-end;
-      background-color: transparent;
-      transition: all .7s ease-in-out;
+    opacity: 1;
+    background-color: #fafafa;
+    z-index: 999;
+    height: 3.2rem;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: flex-end;
+    background-color: transparent;
+    padding-right: 10px;
   }
   
   .nav-wrapper li {
       padding: 0%;
       margin-left:  2%;
       list-style-type: none;
+  }
+
+  .nav-item {
+    color: hsl(0, 0%, 0%);
+    text-transform: uppercase;
+    font-size: 13px;
+    cursor: pointer;
   }
   
 }

@@ -1,5 +1,13 @@
+@import "./styles.css";
+
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "proxima-nova", sans-serif;
+  /* font-size: 16px; */
+  font-weight: 400;
+  font-style: normal;
 }
 
 .app {
@@ -17,8 +25,9 @@
 header {
   position: fixed;
   z-index: 100;
-  height: 50px;
+  height: 40px;
   width: 100%;
+  /* background-color: burlywood; */
 }
 
 .app_content{
@@ -39,8 +48,8 @@ header {
   /* clip-path: polygon(50% 10%, 75% 25%, 50% 40%, 25% 25%); */
   background-image: url("../images/bk_dark_35.webp");
   background-color: #111111;
-  height: 100vh;
-  width: auto;
+  height: 120vh;
+  width: 800px;
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover;
   -webkit-background-size: cover;
@@ -53,11 +62,6 @@ header {
   position: relative;
   height: 100vh;
   width: 100vw;
-}
-
-.font-regular {
-  color: rgb(233, 233, 233);
-  font-size: 14px;
 }
 
 .slide1_logo_container {
@@ -82,36 +86,32 @@ header {
   position: absolute;
   bottom: 6vh;
 }
-.horizontal-line {
-  border-bottom: 1px solid rgb(238, 238, 238);
-  width: 50vw;
-}
 
 .btn-container {
   margin-top: 20px;
   height: 45px;
   width: 150px;
-}
-
-.btn {
-  line-height: 45px;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  cursor: pointer;
+  background-color: var(--orange-light)
 }
 
 .btn span {
   position: relative;
   z-index: 3;
   color: #ffffff;
+  cursor: pointer;
 }
 
 .btn-menu {
+  cursor: pointer;
   color: #ffffff;
   transition: all 0.5s;
   position: relative;
+  line-height: 45px;
+  width: 100%;
+  height: 100%;
+  text-align: center;
 }
+
 .btn-menu::before {
   content: '';
   position: absolute;
@@ -120,7 +120,7 @@ header {
   width: 100%;
   height: 100%;
   z-index: 1;
-  background-color: rgb(221, 94, 20);
+
   border-radius: 2px;
   transition: all 0.3s;
 }
@@ -152,14 +152,39 @@ header {
 /* slide 2  */
 .slide2 {
   background-color: #111111;
-  margin: 20% 0%;
+}
+
+.info-container {
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  
+  /* background-color: antiquewhite; */
+}
+
+.sm-icon {
+  height: 30px;
+  width: 30px;
+  margin-bottom: 30px;
+  background-color: transparent;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+a { text-decoration: none; }
+a .sm-icon + div {
+  margin-left: 20px;
+  color: white;
+  text-decoration: none;
+}
+
+.insta {
+  background-image: url("../images/instaicon.png");
 }
 
 .workday {
   color: rgb(255, 255, 255);
-  /* background-color: blue; */
   margin-bottom: 15px;
 }
 
@@ -176,7 +201,7 @@ header {
   width: 100%;
   z-index: 3;
   border-radius: 3px;
-  margin: 10% 0% 15% 0%;
+  margin: 10% 0%;
 }
 
 .google-maps iframe {
@@ -185,6 +210,34 @@ header {
   left: 0;
   width: 100% !important;
   height: 100% !important;
+}
+
+/* SLIDE 3 */
+.slide3 {
+ background-color: var( --beige-mid);
+ position: relative;
+ color: #ffffff;
+}
+
+.slide3 .subheading {
+  color: #ffffff;
+  align-self: center;
+}
+.slide3 .horizontal-line {
+  border-bottom: 1px solid  white;
+}
+
+.hero-container {
+  padding: 40px 0;
+  color: black;
+  font-weight: 900;
+  font-size: 20px;
+  /* margin: 20px 0px; */
+  text-align: center;
+}
+
+.hero-container div{
+  margin-top: 20px;
 }
 
 footer {
@@ -207,9 +260,6 @@ footer {
 
   .slide2 {
     background-color: #111111;
-    margin: 20% 0%;
-    display: flex;
-    flex-flow: row-reverse wrap;
     justify-content: center;
     align-items:flex-start;
     gap: 2%;
