@@ -162,10 +162,9 @@ header {
   
   /* background-color: antiquewhite; */
 }
-
 .sm-icon {
-  height: 30px;
-  width: 30px;
+  height: 25px;
+  width: 25px;
   margin-bottom: 30px;
   background-color: transparent;
   background-size: contain;
@@ -214,17 +213,15 @@ a .sm-icon + div {
 
 /* SLIDE 3 */
 .slide3 {
- background-color: var( --beige-mid);
+ background-color: var( --beige-light);
+ color: var(--brown-dark);
  position: relative;
- color: #ffffff;
 }
 
+
 .slide3 .subheading {
-  color: #ffffff;
+  color:  black;
   align-self: center;
-}
-.slide3 .horizontal-line {
-  border-bottom: 1px solid  white;
 }
 
 .hero-container {
@@ -232,13 +229,30 @@ a .sm-icon + div {
   color: black;
   font-weight: 900;
   font-size: 20px;
-  /* margin: 20px 0px; */
   text-align: center;
 }
 
 .hero-container div{
-  margin-top: 20px;
+  font-weight: 700;
 }
+
+.quote-marks svg{
+  width: 65px;
+  fill:white;
+
+}
+.quote {
+  color: #fff;
+  display: flex;
+  flex-flow: column;
+  align-items: end;
+
+}
+/* .quote-marks { font-weight: 500; } */
+.quote h3 {
+  color: #111111;
+}
+
 
 footer {
   position: relative;
@@ -265,6 +279,7 @@ footer {
     gap: 2%;
    
   }
+
   .location, .schedule {
     width: 40%;
   }

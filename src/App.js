@@ -4,6 +4,8 @@ import Nav  from './Nav'
 import Animations from "./animations.js";
 import './Styles/App.css';
 import './Styles/styles.css';
+import Spoon from './images/svg/Spoon';
+import Quotes from "./images/svg/Quotes";
 import { default as logo } from './images/logo_white.png';
 import { default as heroImg } from './images/about_img.jpeg';
 
@@ -67,7 +69,9 @@ function App() {
           <div className="location width-100"  ref={addressContainerRef}>
             <div className="width-100 popup-anim">
               <h3 className="subheading font-fancy" id="contacts">Contacts</h3>
-              <div className="horizontal-line margin-btm-big"></div>
+              <div className="spoon margin-auto margin-btm-big">
+                <Spoon color='#dccdac' />
+              </div>
             </div>
             <div className="contacts margin-btm-mid">
               <div className='opacity-anim info-container opacity-anim'>
@@ -100,8 +104,10 @@ function App() {
             <br />
             <div className="margin-top-mid">
               <div className="width-100 popup-anim">
-                <h3 className="subheading font-fancy">Location</h3>
-                <div className="horizontal-line margin-btm-big"></div>
+                <h3 className="subheading font-fancy">Find Us</h3>
+                <div className=" spoon margin-auto margin-btm-big">
+                <Spoon color='#dccdac' />
+              </div>
               </div>
               <p className="font-regular opacity-anim">
                   707 E Ocean Blvd D Long Beach, CA 90802
@@ -115,8 +121,10 @@ function App() {
           </div>
 
           <div className="popup-anim schedule width-100 font-regular margin-top-mid" id="hours" ref={hoursRef}>
-            <h3 className="subheading font-fancy">Hours</h3>
-            <div className="horizontal-line margin-btm-big"></div>
+            <h3 className="subheading font-fancy">Opening Hours</h3>
+            <div className="spoon margin-btm-big margin-auto">
+              <Spoon color='#dccdac' />
+              </div>
             <div className="flex-row  workday">
               <div>Mon</div> 
               <div className="time">Closed</div>
@@ -155,22 +163,34 @@ function App() {
         </section>
         
         <section className="slide3 flex-col-left padding-slide" id="about">
+          <h3 className="font-fancy">Chef's Word</h3>
+          <div className="spoon margin-btm-big ">
+                <Spoon color='#55311c'/>
+              </div>
           <div className="width-100 popup-anim">
-            <h2 className="subheading font-fancy">About</h2>
-            <div className="horizontal-line margin-btm-big"></div>
+            <h2 className="subheading font-fancy">What We Believe In</h2>
+            {/* <div className="horizontal-line margin-btm-big"></div> */}
           </div>
           <div className="hero-container width-100">
             <img className="width-100 radius-small opacity-anim"
              src={heroImg} alt="" />
-            <div className="font-fancy opacity-anim">
-           Rodrigo Inacio, Bmore Protein Pub owner 
-            </div>
           </div>
-          <div className="hero-text opacity-anim">
-            <p>BMORE has been serving up high-protein shakes, Acai bowls and breakfast dishes in The Downtown for eight months.</p>
-            <p>
-            “The goal here is to make this place comfortable so people can relax, unwind and have a good time.”
-            </p>
+          <div className="opacity-anim">
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna. </p>
+            
+            <div className="quote margin-top-big">
+              <div className="quote-marks">
+                <Quotes />
+                The goal here is to make this place comfortable so people can relax, unwind and have a good time
+              </div>
+              <h3 className="margin-top-big font-fancy font-big opacity-anim">
+                Rodrigo Inacio 
+                </h3>
+             <h4 className="font-fancy font-mid opacity-anim">
+                Chef & Founder
+                </h4>
+            </div>
+            
           </div>
 
         </section>
