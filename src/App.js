@@ -1,12 +1,13 @@
 import React from "react";
 import { useState, useRef, useEffect } from "react";
-import Nav  from './Nav'
+import Nav  from './components/Nav'
 import Animations from "./animations.js";
 import './Styles/App.css';
 import './Styles/styles.css';
+import { Menu } from "./components/Menu";
 import Spoon from './images/svg/Spoon';
 import Quotes from "./images/svg/Quotes";
-import { default as logo } from './images/logo_white.png';
+import { default as logo } from './images/logo/logo_white.png';
 import { default as heroImg } from './images/about_img.jpeg';
 
 function App() {
@@ -50,16 +51,16 @@ function App() {
           </h1>
 
           <div className="text-block flex-col-center" ref={textSlide1Ref}>
-            <p className="popup-slide1 font-reg margin-btm-mid " >BE KIND</p>
-            <p className="popup-slide1 font-reg margin-btm-mid " >BE STRONG</p>
-            <p className="popup-slide1 font-reg margin-btm-mid " >BE MORE</p>
+            <p className="popup-slide1 font-fancy margin-btm-mid " >BE KIND</p>
+            <p className="popup-slide1 font-fancy margin-btm-mid " >BE STRONG</p>
+            <p className="popup-slide1 font-fancy margin-btm-mid " >BE MORE</p>
           </div>
           
           <div className="slide1-bottom-container flex-col-center opacity-anim">
             {/* <div className="horizontal-line"></div> */}
             <div className="btn-container">
-              <div className="btn-menu">
-                <span>MENU</span>
+              <div className="btn-menu ">
+                <span className=' font-mid'>MENU</span>
               </div>
             </div>
           </div>
@@ -161,21 +162,24 @@ function App() {
             </div>
           </div>
         </section>
-        
-        <section className="slide3 flex-col-left padding-slide" id="about">
+
+        <section className="slide-clip-path width-100">
+          <p className="bg">BEMORE</p>
+        </section>
+
+        <section className="slide-about flex-col-left padding-slide" id="about">
           <h3 className="font-fancy">Chef's Word</h3>
           <div className="spoon margin-btm-big ">
                 <Spoon color='#55311c'/>
               </div>
           <div className="width-100 popup-anim">
             <h2 className="subheading font-fancy">What We Believe In</h2>
-            {/* <div className="horizontal-line margin-btm-big"></div> */}
           </div>
           <div className="hero-container width-100">
             <img className="width-100 radius-small opacity-anim"
              src={heroImg} alt="" />
           </div>
-          <div className="opacity-anim">
+          <div className="text opacity-anim">
             <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna. </p>
             
             <div className="quote margin-top-big">
@@ -190,9 +194,11 @@ function App() {
                 Chef & Founder
                 </h4>
             </div>
-            
           </div>
+        </section>
 
+        <section >
+          <Menu />
         </section>
       </article>
       <footer className="padding-5">

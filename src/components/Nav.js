@@ -1,8 +1,6 @@
 import React from 'react';
-import './Styles/styles.css'
-import './Styles/nav.css';
-
-const navContext = React.createContext(undefined);
+import '../Styles/styles.css';
+import '../Styles/nav.css';
 
 const Nav = ({ toggleNavCallback, navClicked }) => {
 

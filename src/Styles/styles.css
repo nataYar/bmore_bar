@@ -76,11 +76,6 @@ font-style: normal; */
     width: 100vw;
   }
   
-  .text-block p {
-    height: 1rem;
-    margin-top: 5px;
-  }
-  
   .flex-col-center {
     display: flex;
     flex-flow: column nowrap;

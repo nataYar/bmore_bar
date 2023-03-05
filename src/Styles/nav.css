@@ -1,5 +1,6 @@
 @import './styles.css';
 
+
 /* visible */
 .blob {
   position: absolute;
@@ -65,7 +66,7 @@ a.nav-item {
 .nav-icon span{
     width: 5px;
     height: 5px;
-    background-color: #fafafa;
+    background-color: #ffffff;
     display: block;
     border-radius: 50%;
     position: absolute;

@@ -48,7 +48,7 @@ const Animations = ({ width, navClicked, appRef, slide1Ref, textSlide1Ref, slide
           
             }
           })
-          .fromTo(el, { y: '-30px', opacity: 0 }, { y: '0', opacity: 1 }, );
+          .fromTo(el, { y: '30px', opacity: 0 }, { y: '0', opacity: 1 }, );
         });
 
       // OPACITY 0 => 1 
@@ -75,8 +75,8 @@ const Animations = ({ width, navClicked, appRef, slide1Ref, textSlide1Ref, slide
         ease: "power4.inout"
         } 
     })
-    .fromTo('.app_background', { scale: 2.5,  opacity: 0 }, {scale: 1, y:'-100', opacity: 1 })
-    .fromTo('.logo', { y: '60px', scale: .5, opacity: 0, }, { scale: 1.1, y: '0', opacity: 1}, "<")
+    .fromTo('.app_background', { scale: 2.5,  opacity: 0 }, {scale: 1.2, opacity: 1 })
+    .fromTo('.logo', { y: '60px', scale: .5, opacity: 0, }, { scale: 1, y: '0', opacity: 1}, "<")
     .fromTo(".popup-slide1", { y: '20px', opacity: 0 }, { y: '0', opacity: 1, stagger: .3 });
 
     backgroundTl.current = gsap.timeline({
@@ -88,28 +88,30 @@ const Animations = ({ width, navClicked, appRef, slide1Ref, textSlide1Ref, slide
           trigger: ".slide2",
           start: 'top 100%', 
           end: '30%',
-          // scrub: true,
+          scrub: true,
           // markers: true
       }
     })
 
     backgroundTl.current
-    .to('.app_background', { scale: 1,  y: '30px', x: '-140px'})
+    .to(
+      '.app_background', { scale: 1}
+      )
 
-    background2Tl.current = gsap.timeline({
-      defaults: {
-        duration: 2.5,
-        ease: "power1"
-        },
-        scrollTrigger: {
-          trigger: ".slide-about",
-          start: 'top 100%', 
-          // end: '150%',
-          scrub: true,
-      }
-    })
-    background2Tl.current
-    .to('.app_background', {scale: 2, x: '-600'})
+    // background2Tl.current = gsap.timeline({
+    //   defaults: {
+    //     duration: 2.5,
+    //     ease: "power1"
+    //     },
+    //     scrollTrigger: {
+    //       trigger: ".slide-about",
+    //       start: 'top 100%', 
+    //       // end: '150%',
+    //       scrub: true,
+    //   }
+    // })
+    // background2Tl.current
+    // .to('.app_background', {scale: 2, x: '-600'})
   }, [])
 
 
