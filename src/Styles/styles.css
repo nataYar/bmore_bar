@@ -1,22 +1,26 @@
 * {
-  --orange-light:  hsl(44, 74%, 55%);
-  --orange-mid: hsl(47, 69%, 45%);
-  --orange-dark: hsl(43, 75%, 45%);
-  --orange-bmore:hsl(45, 61%, 43%);
+  --orange-light:  #e1b437;
+  --orange-mid: #c2a024;
+  --orange-dark: #c9981d;
+  --orange-bmore: hwb(45 17% 31%);
   
   --beige-light: #dccdac;
   --beige-mid: #b59a7c;
+  --beige-dark: #a99175;
+  --beige-deep: #927c63;
 
   --brown-light: #b87b4f;
   --brown-mid: #7d4829;
   --brown-dark: #55311c;
+  --brown-deep: #0d0703;
 }
 
+/* coffee leaf svg */
+.coffee-leaf-fill { fill: var(--beige-light)}
+
+.scoop-fill  { fill: var(--beige-light)}
+
 /* ELEMENTS */
-.horizontal-line {
-  border-bottom: 1px solid  var(--beige-light);
-  width: 50%;
-}
 
 .spoon {
   width: 40px;
@@ -124,7 +128,7 @@ font-style: normal; */
   }
 
   .padding-slide {
-    padding: 50px 20px;
+    padding: 60px 5%;
   }
   /*  */
   .radius-small {

@@ -1,0 +1,77 @@
+.coffee-leaf {
+    width: 100px;
+    position: absolute;
+    z-index: 2;
+    left: 28%;
+    bottom: -65%;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1) ;
+}
+
+.scoop {
+    width: 180px;
+    position: absolute;
+    z-index: 2;
+    right: 5px;
+    top: -35px;
+    transform: rotate(45deg);
+    transform-origin: right;
+}
+
+
+.bean {
+    position: absolute;
+    z-index: 3;
+    opacity: 0;
+    /* right: 100px;
+    top: -16px; */
+
+    background-size:100% 100%;
+    -o-background-size: 100% 100%;
+    -webkit-background-size: 100% 100%;
+    background-size:cover;
+}
+.bean1 { 
+    right: 140px;
+    top: 70px;
+
+    background-image: url(../images/svg/beans/bean1.svg);
+    width: 40px;
+    height: 24px;
+    /* background-color: brown; */
+}
+.bean2 { 
+    right: 130px;
+    top: 36px;
+
+    /* background-color: blueviolet; */
+    width: 44px;
+    height: 27px;
+    background-image: url(../images/svg/beans/bean2.svg);}
+
+.bean3 { 
+    right: 210px;
+    top: 66px;
+
+    /* background-color: aqua; */
+    width: 31px;
+    height: 26px;
+    background-image: url(../images/svg/beans/bean3.svg);}
+
+.bean4 { 
+    right: 200px;
+    top: 100px;
+
+    /* background-color: chartreuse; */
+    width: 30px;
+    height: 30px;
+    background-image: url(../images/svg/beans/bean4.svg);}
+
+.bean5 { 
+    right: 120px;
+    top: 100px;
+    /* background-color: blue; */
+
+    width: 40px;
+    height: 23px;
+    background-image: url(../images/svg/beans/bean5.svg);}

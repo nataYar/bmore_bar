@@ -7,7 +7,10 @@ const Animations = ({ width, navClicked, appRef, slide1Ref, textSlide1Ref, slide
 
   const navTl = useRef();
   const backgroundTl = useRef();
-  const background2Tl = useRef();
+  const heroTl = useRef();
+  const sslide1backgroung = useRef();
+  const aboutSvgTl = useRef();
+  // const heroImg = gsap.utils.selector(".hero-container");
 
 // let slide = gsap.utils.selector(".slide1");
     // const boxes = gsap.utils.toArray(".box");
@@ -44,8 +47,7 @@ const Animations = ({ width, navClicked, appRef, slide1Ref, textSlide1Ref, slide
             scrollTrigger: {
                 trigger: el,
                 start: 'top 100%',
-               
-          
+              //  markers: true
             }
           })
           .fromTo(el, { y: '30px', opacity: 0 }, { y: '0', opacity: 1 }, );
@@ -69,49 +71,80 @@ const Animations = ({ width, navClicked, appRef, slide1Ref, textSlide1Ref, slide
           });
 
     // ON LOAD animation
-    const sslide1backgroung = gsap.timeline({ 
+    sslide1backgroung.current = gsap.timeline({ 
         defaults: {  
-        duration: 1.2,
+        duration: 1,
         ease: "power4.inout"
         } 
     })
     .fromTo('.app_background', { scale: 2.5,  opacity: 0 }, {scale: 1.2, opacity: 1 })
     .fromTo('.logo', { y: '60px', scale: .5, opacity: 0, }, { scale: 1, y: '0', opacity: 1}, "<")
-    .fromTo(".popup-slide1", { y: '20px', opacity: 0 }, { y: '0', opacity: 1, stagger: .3 });
+    // .fromTo(".popup-slide1", { y: '20px', opacity: 0 }, { y: '0', opacity: 1, stagger: .3 });
 
     backgroundTl.current = gsap.timeline({
       defaults: {
         duration: 2,
-        // ease: "power1"
+        ease: "power1.inout"
         },
         scrollTrigger: {
-          trigger: ".slide2",
-          start: 'top 100%', 
-          end: '30%',
+          trigger: ".slide-about",
+          start: '30% 100%', 
+          end: 'bottom',
           scrub: true,
           // markers: true
       }
     })
 
     backgroundTl.current
-    .to(
-      '.app_background', { scale: 1}
-      )
+    .fromTo('.hero-container',{opacity: 0}, {opacity: 1,  duration: 1,
+      ease: "power1.out"})
+    .fromTo('.hero-container',{y: '10'}, {y: '-250px'},"<")
 
-    // background2Tl.current = gsap.timeline({
-    //   defaults: {
-    //     duration: 2.5,
-    //     ease: "power1"
-    //     },
-    //     scrollTrigger: {
-    //       trigger: ".slide-about",
-    //       start: 'top 100%', 
-    //       // end: '150%',
-    //       scrub: true,
-    //   }
-    // })
-    // background2Tl.current
-    // .to('.app_background', {scale: 2, x: '-600'})
+    aboutSvgTl.current = gsap.timeline({
+      defaults: {
+        duration: 2.5,
+        ease: "power4.inout"
+        },
+        scrollTrigger: {
+          trigger: ".slide-about",
+          start: '0% 100%', 
+          end: '50% 90%',
+          scrub: true,
+          // markers: true,
+      }
+    })
+    aboutSvgTl.current
+    .fromTo(".scoop", {opacity: 0},{opacity: 1, rotation: 20})
+    .to(".bean1", {opacity: 1, x : "-40px", y: "10px", duration: 2.5})
+    .to(".bean2", {opacity: 1, x : "-70px", y: "10px", duration: 2.3}, "<")
+    .to(".bean3", {opacity: 1, x : "-60px", y: "20px", duration: 2.6}, "<") //furthest
+    .to(".bean4", {opacity: 1, x : "-30px", y: "10px" , duration: 1.9}, "<")
+    .to(".bean5", {opacity: 1, x : "-15px", y: "3px", duration: 2.4}, "<")
+    // const beanEl = gsap.utils.toArray('.bean');
+    //   beanEl.forEach((el) => {
+    //       gsap.timeline({ 
+    //         defaults: {
+    //           duration: 1,
+    //           ease: "ease.in"
+    //           },
+    //           scrollTrigger: {
+    //             trigger: el,
+    //             start: 'top 100%', 
+    //             end: '100% 55%',
+
+    //             // scrub: true,
+    //             // markers: true,
+                  
+    //           }
+    //         })
+            // .to(".scoop", {rotation: 20})
+            // .to(el, {opacity: 1}, "+1.5")
+            // .to(".bean1", {x : "-20px", y: "5px"}, "<")
+            // .to(".bean2", {x : "-70px", y: "0px"}, "<")
+            // .to(".bean3", {opacity: 1, x : "-30px", y: "10px"}, "+=.1")
+          // });
+
+    // .fromTo(".scoop", {x: -45, y: '-20%'}, {rotation: -20, transformOrigin: "right"}
   }, [])
 
 

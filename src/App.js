@@ -4,11 +4,15 @@ import Nav  from './components/Nav'
 import Animations from "./animations.js";
 import './Styles/App.css';
 import './Styles/styles.css';
+import './Styles/svg.css';
 import { Menu } from "./components/Menu";
 import Spoon from './images/svg/Spoon';
 import Quotes from "./images/svg/Quotes";
+import CoffeeLeaf from './images/svg/CoffeeLeaf';
+import Scoop from "./images/svg/Scoop";
+// import CoffeeBean from "./images/svg/CofeeBeans2";
 import { default as logo } from './images/logo/logo_white.png';
-import { default as heroImg } from './images/about_img.jpeg';
+import { default as heroImg } from './images/hero/about_img_short.webp';
 
 function App() {
   const [navClicked, setNavclicked] = useState(false)
@@ -45,7 +49,7 @@ function App() {
       </header>
       <div className="app_background"></div>
       <article className='app_content' ref={appRef}>
-        <section className="slide-100-100 slide1 flex-col-center" ref={slide1Ref} >
+        <section className="slide1 flex-col-center" ref={slide1Ref} >
           <h1 className='slide1_logo_container'>
             <img className='logo' src={logo} alt="bmore protein bar" />
           </h1>
@@ -58,9 +62,11 @@ function App() {
           
           <div className="slide1-bottom-container flex-col-center opacity-anim">
             {/* <div className="horizontal-line"></div> */}
-            <div className="btn-container">
+            <div className="btn-container pointer">
               <div className="btn-menu ">
-                <span className=' font-mid'>MENU</span>
+                {/* <CoffeeLeaf/>
+                <div className="circle"></div> */}
+                <span className='font-regular'>MENU</span>
               </div>
             </div>
           </div>
@@ -93,7 +99,7 @@ function App() {
                   </a>
                   <a className="flex-row" href="https://www.facebook.com/bmoreproteinpub/" target="_blank" rel="noreferrer">
                     <div className='sm-icon yelp' >
-                      <svg enable-background="new 0 0 128 128" id="Social_Icons" version="1.1" viewBox="0 0 128 128"><g id="_x31__stroke"><g id="Facebook_1_"><rect fill="none" height="128" width="128"/><path clip-rule="evenodd" d="M68.369,128H7.065C3.162,128,0,124.836,0,120.935    V7.065C0,3.162,3.162,0,7.065,0h113.871C124.837,0,128,3.162,128,7.065v113.87c0,3.902-3.163,7.065-7.064,7.065H88.318V78.431    h16.638l2.491-19.318H88.318V46.78c0-5.593,1.553-9.404,9.573-9.404l10.229-0.004V20.094c-1.769-0.235-7.841-0.761-14.906-0.761    c-14.749,0-24.846,9.003-24.846,25.535v14.246H51.688v19.318h16.681V128z" fill="#4460A0" fill-rule="evenodd" id="Facebook"/></g></g></svg>
+                      <svg enableBackground="new 0 0 128 128" id="Social_Icons" version="1.1" viewBox="0 0 128 128"><g id="_x31__stroke"><g id="Facebook_1_"><rect fill="none" height="128" width="128"/><path clipRule="evenodd" d="M68.369,128H7.065C3.162,128,0,124.836,0,120.935    V7.065C0,3.162,3.162,0,7.065,0h113.871C124.837,0,128,3.162,128,7.065v113.87c0,3.902-3.163,7.065-7.064,7.065H88.318V78.431    h16.638l2.491-19.318H88.318V46.78c0-5.593,1.553-9.404,9.573-9.404l10.229-0.004V20.094c-1.769-0.235-7.841-0.761-14.906-0.761    c-14.749,0-24.846,9.003-24.846,25.535v14.246H51.688v19.318h16.681V128z" fill="#4460A0" fillRule="evenodd" id="Facebook"/></g></g></svg>
                     </div>
                     <div className="font-regular">bmoreproteinpub</div>
                   </a>
@@ -116,7 +122,7 @@ function App() {
 
               <div className="google-maps opacity-anim">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3316.7700278037464!2d-118.18831427199875!3d33.76660811890422!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dd310b3a6bbf29%3A0xcb4689f44a64d336!2sBmore%20Protein%20Pub!5e0!3m2!1sen!2sus!4v1677538487272!5m2!1sen!2sus" 
-                allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+                allowFullScreen="" referrerPolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
           </div>
@@ -163,26 +169,44 @@ function App() {
           </div>
         </section>
 
-        <section className="slide-clip-path width-100">
+        {/* <section className="slide-clip-path width-100">
           <p className="bg">BEMORE</p>
-        </section>
+        </section> */}
 
-        <section className="slide-about flex-col-left padding-slide" id="about">
-          <h3 className="font-fancy">Chef's Word</h3>
-          <div className="spoon margin-btm-big ">
-                <Spoon color='#55311c'/>
-              </div>
-          <div className="width-100 popup-anim">
-            <h2 className="subheading font-fancy">What We Believe In</h2>
+        <section className="slide-about padding-slide" id="about">
+          <div className="scoop">
+            <Scoop/>
           </div>
-          <div className="hero-container width-100">
-            <img className="width-100 radius-small opacity-anim"
-             src={heroImg} alt="" />
+          <div className="bean-container">
+            <div className="bean bean1" id='1'></div>
+            <div className="bean bean2" id='2'></div>
+            <div className="bean bean3" id='3'></div>
+            <div className="bean bean4" id='4'></div>
+            <div className="bean bean5" id='5'></div>
           </div>
-          <div className="text opacity-anim">
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna. </p>
             
-            <div className="quote margin-top-big">
+          <div className="chefsWord">
+            <h3 className="font-fancy font-regular">Chef's Word</h3>
+            <div className="spoon margin-btm-big ">
+                <Spoon color='#fff'/>
+              </div>
+          </div>
+          
+          <div className="width-100">
+            <h2 className=" opacity-anim subheading font-fancy" id="slide-about-sub">What We Believe In</h2>
+          </div>
+          
+          <div className="text font-mid opacity-anim margin-top-big">
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.
+          </div>
+
+            <div className="hero-container">
+              <img className="hero-img width-100 radius-small"
+              src={heroImg} alt="" />
+            </div> 
+
+
+            <div className="quote opacity-anim">
               <div className="quote-marks">
                 <Quotes />
                 The goal here is to make this place comfortable so people can relax, unwind and have a good time
@@ -190,14 +214,14 @@ function App() {
               <h3 className="margin-top-big font-fancy font-big opacity-anim">
                 Rodrigo Inacio 
                 </h3>
-             <h4 className="font-fancy font-mid opacity-anim">
+                {/* <CoffeeLeaf /> */}
+              <h4 className="font-fancy font-mid opacity-anim">
                 Chef & Founder
                 </h4>
             </div>
-          </div>
         </section>
 
-        <section >
+        <section className="slide-100-100">
           <Menu />
         </section>
       </article>
