@@ -2,10 +2,10 @@ import React from "react";
 import { useState, useRef, useEffect } from "react";
 import Nav  from './components/Nav'
 import Animations from "./animations.js";
-import './Styles/App.css';
-import './Styles/styles.css';
-import './Styles/svg.css';
-import { Menu } from "./components/Menu";
+import './styles/App.css';
+import './styles/styles.css';
+import './styles/svg.css';
+import Menu from "./components/Menu/Menu";
 import Spoon from './images/svg/Spoon';
 import Quotes from "./images/svg/Quotes";
 import CoffeeLeaf from './images/svg/CoffeeLeaf';
@@ -214,14 +214,13 @@ function App() {
               <h3 className="margin-top-big font-fancy font-big opacity-anim">
                 Rodrigo Inacio 
                 </h3>
-                {/* <CoffeeLeaf /> */}
               <h4 className="font-fancy font-mid opacity-anim">
                 Chef & Founder
                 </h4>
             </div>
-        </section>
+        </section> 
 
-        <section className="slide-100-100">
+        <section className="width-100">
           <Menu />
         </section>
       </article>

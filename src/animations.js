@@ -77,7 +77,7 @@ const Animations = ({ width, navClicked, appRef, slide1Ref, textSlide1Ref, slide
         ease: "power4.inout"
         } 
     })
-    .fromTo('.app_background', { scale: 2.5,  opacity: 0 }, {scale: 1.2, opacity: 1 })
+    .fromTo('.app_background', { scale: 2.5,  opacity: 0 }, {scale: 1, opacity: 1 })
     .fromTo('.logo', { y: '60px', scale: .5, opacity: 0, }, { scale: 1, y: '0', opacity: 1}, "<")
     // .fromTo(".popup-slide1", { y: '20px', opacity: 0 }, { y: '0', opacity: 1, stagger: .3 });
 
@@ -98,7 +98,7 @@ const Animations = ({ width, navClicked, appRef, slide1Ref, textSlide1Ref, slide
     backgroundTl.current
     .fromTo('.hero-container',{opacity: 0}, {opacity: 1,  duration: 1,
       ease: "power1.out"})
-    .fromTo('.hero-container',{y: '10'}, {y: '-250px'},"<")
+    .to('.hero-container', {y: '-250px'},"<")
 
     aboutSvgTl.current = gsap.timeline({
       defaults: {

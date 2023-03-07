@@ -1,0 +1,38 @@
+@import '../../styles/styles.css';
+
+.slide-menu {
+background-color: var(--brown-deep);
+color: white;
+}
+
+.menu-subnav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-subnav li {
+    display: inline-block;
+}
+
+.menu-subnav a:active, 
+.menu-subnav a:hover, 
+.menu-subnav a.current-option {
+    color: var(--orange-dark);
+}
+
+.menu-subnav a {
+    color: white;
+    display: block;
+    margin: 0 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+a.back-to-top {
+    display: block;
+    text-align: center;
+    margin-top: 24px;
+    margin-bottom: 48px;
+    color: var(--orange-dark);
+}

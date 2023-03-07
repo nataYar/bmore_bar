@@ -1,6 +1,6 @@
 import React from 'react';
-import '../Styles/styles.css';
-import '../Styles/nav.css';
+import '../styles/styles.css';
+import '../styles/nav.css';
 
 const Nav = ({ toggleNavCallback, navClicked }) => {
 
@@ -48,7 +48,12 @@ const Nav = ({ toggleNavCallback, navClicked }) => {
             </li>
             <li onClick={ toggleNavCallback }>
                 <a href="#menu" className='nav-item nav-footer'>
-                    Menu
+                    menu
+                </a>
+            </li>
+            <li onClick={ toggleNavCallback }>
+                <a href="#events" className='nav-item nav-footer'>
+                    events
                 </a>
             </li>
         </ul>

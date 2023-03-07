@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../Styles/svg.css';
+import '../../styles/svg.css';
 
 export default function Scoop() {
   return (

@@ -43,7 +43,7 @@ header {
   left: 0%;
   right: 0%;
   bottom: 0%;
-  background-position: -40px;
+  background-position: -70px;
   transform-origin: center;
   /* clip-path: polygon(50% 10%, 75% 25%, 50% 40%, 25% 25%); */
   background-image: url("../images/madewithlove.jpeg");
@@ -253,7 +253,8 @@ a .sm-icon + div {
 }
 
 .slide-about .subheading {
-  /* padding-top: 35px; */
+  position: relative;
+  z-index: 1;
   color: var( --beige-light);
   align-self: center;
 }
