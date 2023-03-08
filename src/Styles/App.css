@@ -24,10 +24,9 @@
 
 header {
   position: fixed;
-  z-index: 100;
-  height: 40px;
+  z-index: 5;
+  height: 1px;
   width: 100%;
-  /* background-color: burlywood; */
 }
 
 .app_content{
@@ -289,28 +288,25 @@ a .sm-icon + div {
   z-index: 2;
   color: var(--brown-dark);
   color: #ffffff;
-  /* text-align: justify; */
 }
 
-/* .quote-marks { font-weight: 500; } */
 .quote h3 {
   color: var(--beige-light);
 }
 
-/* MENU SECTION  */
-.section-menu {
-
-}
 
 footer {
   position: relative;
   z-index: 1;
-  height: 25vh;
+  height: 20vh;
   width: 100vw;
   background-color: rgb(18, 18, 18);
 }
 
 @media screen and (min-width: 768px){
+  header {
+    height: 40px;
+  }
   .google-maps {
     overflow: hidden;
     padding-bottom: 40%;

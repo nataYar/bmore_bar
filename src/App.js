@@ -5,7 +5,7 @@ import Animations from "./animations.js";
 import './styles/App.css';
 import './styles/styles.css';
 import './styles/svg.css';
-import Menu from "./components/Menu/Menu";
+import Menu from "./components/Menu";
 import Spoon from './images/svg/Spoon';
 import Quotes from "./images/svg/Quotes";
 import CoffeeLeaf from './images/svg/CoffeeLeaf';
@@ -75,7 +75,7 @@ function App() {
         <section className='slide2 padding-slide flex-col-row' id='location'>
           <div className="location width-100"  ref={addressContainerRef}>
             <div className="width-100 popup-anim">
-              <h3 className="subheading font-fancy" id="contacts">Contacts</h3>
+              <h2 className="subheading font-fancy" id="contacts">Contacts</h2>
               <div className="spoon margin-auto margin-btm-big">
                 <Spoon color='#dccdac' />
               </div>
@@ -109,9 +109,9 @@ function App() {
                 <p className="font-regular pointer opacity-anim" href="tel:+12133060257">Phone: (213) 306-0257</p>
             </div>
             <br />
-            <div className="margin-top-mid">
+            <div className="margin-top-big">
               <div className="width-100 popup-anim">
-                <h3 className="subheading font-fancy">Find Us</h3>
+                <h2 className="subheading font-fancy">Find Us</h2>
                 <div className=" spoon margin-auto margin-btm-big">
                 <Spoon color='#dccdac' />
               </div>
@@ -128,7 +128,7 @@ function App() {
           </div>
 
           <div className="popup-anim schedule width-100 font-regular margin-top-mid" id="hours" ref={hoursRef}>
-            <h3 className="subheading font-fancy">Opening Hours</h3>
+            <h2 className="subheading font-fancy margin-top-big">Opening Hours</h2>
             <div className="spoon margin-btm-big margin-auto">
               <Spoon color='#dccdac' />
               </div>

@@ -47,7 +47,7 @@ const Nav = ({ toggleNavCallback, navClicked }) => {
                 </a>
             </li>
             <li onClick={ toggleNavCallback }>
-                <a href="#menu" className='nav-item nav-footer'>
+                <a href="#slide-menu" className='nav-item nav-footer'>
                     menu
                 </a>
             </li>

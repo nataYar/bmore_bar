@@ -102,7 +102,7 @@ const Animations = ({ width, navClicked, appRef, slide1Ref, textSlide1Ref, slide
 
     aboutSvgTl.current = gsap.timeline({
       defaults: {
-        duration: 2.5,
+        duration: 4,
         ease: "power4.inout"
         },
         scrollTrigger: {
@@ -110,16 +110,15 @@ const Animations = ({ width, navClicked, appRef, slide1Ref, textSlide1Ref, slide
           start: '0% 100%', 
           end: '50% 90%',
           scrub: true,
-          // markers: true,
       }
     })
     aboutSvgTl.current
     .fromTo(".scoop", {opacity: 0},{opacity: 1, rotation: 20})
-    .to(".bean1", {opacity: 1, x : "-40px", y: "10px", duration: 2.5})
-    .to(".bean2", {opacity: 1, x : "-70px", y: "10px", duration: 2.3}, "<")
-    .to(".bean3", {opacity: 1, x : "-60px", y: "20px", duration: 2.6}, "<") //furthest
-    .to(".bean4", {opacity: 1, x : "-30px", y: "10px" , duration: 1.9}, "<")
-    .to(".bean5", {opacity: 1, x : "-15px", y: "3px", duration: 2.4}, "<")
+    .to(".bean1", {opacity: 1, x : "-40px", y: "10px", duration: 4.5})
+    .to(".bean2", {opacity: 1, x : "-70px", y: "10px", duration: 4.3}, "<")
+    .to(".bean3", {opacity: 1, x : "-60px", y: "20px", duration: 4.6}, "<") //furthest
+    .to(".bean4", {opacity: 1, x : "-30px", y: "10px" , duration: 3.9}, "<")
+    .to(".bean5", {opacity: 1, x : "-15px", y: "3px", duration: 4.4}, "<")
     // const beanEl = gsap.utils.toArray('.bean');
     //   beanEl.forEach((el) => {
     //       gsap.timeline({ 
