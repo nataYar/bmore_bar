@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import '../styles/styles.css';
+import '../styles/svg.css';
 import '../styles/menu.css';
 import Spoon from '../images/svg/Spoon';
 import Food from './Food';
 import Drinks from './Drinks';
+import Tomato from '../images/svg/Tomato';
+import Leak from '../images/svg/Leak';
 import data from './data';
 
 const Menu = () => {
@@ -33,8 +36,9 @@ const MenuSubnav = (id) => (
           <Spoon color='#dccdac' />
         </div>
       </div>
-    <div id="menuStart"/>
-    {/* <MenuSubnav /> */}
+    <div id="menuStart"></div>
+    <Tomato/>
+    <Leak />
     <ul className="menu-subnav index-100 flex-row margin-btm-big">
       <li>
         <a className={optionFood ? "current-option pointer index-100 pointer  font-big": "option pointer " } 

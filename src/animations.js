@@ -10,14 +10,15 @@ const Animations = ({ width, navClicked, appRef, slide1Ref, textSlide1Ref, slide
   const heroTl = useRef();
   const sslide1backgroung = useRef();
   const aboutSvgTl = useRef();
+  const menuTl = useRef();
   // const heroImg = gsap.utils.selector(".hero-container");
 
-// let slide = gsap.utils.selector(".slide1");
-    // const boxes = gsap.utils.toArray(".box");
+  // let slide = gsap.utils.selector(".slide1");
+  // const boxes = gsap.utils.toArray(".box");
   useLayoutEffect(() => {
     navTl.current = gsap.timeline({
       defaults: {
-        duration: .7,
+        duration: .5,
         ease: "power1.in"
         },
       paused: true
@@ -34,7 +35,7 @@ const Animations = ({ width, navClicked, appRef, slide1Ref, textSlide1Ref, slide
     }, "-=.5")
     .to(".nav-wrapper", {
       opacity: 1,
-    }, "-=.4")
+    }, "-=.3")
 
     // four each line popping from y:120
     const popEl = gsap.utils.toArray('.popup-anim');
@@ -46,7 +47,7 @@ const Animations = ({ width, navClicked, appRef, slide1Ref, textSlide1Ref, slide
             },
             scrollTrigger: {
                 trigger: el,
-                start: 'top 100%',
+                start: 'top 90%',
               //  markers: true
             }
           })
@@ -63,7 +64,7 @@ const Animations = ({ width, navClicked, appRef, slide1Ref, textSlide1Ref, slide
               },
               scrollTrigger: {
                   trigger: el,
-                  start: 'top 100%',
+                  start: 'top 90%',
                   
               }
             })
@@ -83,22 +84,23 @@ const Animations = ({ width, navClicked, appRef, slide1Ref, textSlide1Ref, slide
 
     backgroundTl.current = gsap.timeline({
       defaults: {
-        duration: 2,
+        duration: 3,
         ease: "power1.inout"
         },
         scrollTrigger: {
-          trigger: ".slide-about",
-          start: '30% 100%', 
+          trigger: ".hero-img",
+          start: '30% 90%', 
           end: 'bottom',
-          scrub: true,
+          // scrub: true,
           // markers: true
       }
     })
 
     backgroundTl.current
-    .fromTo('.hero-container',{opacity: 0}, {opacity: 1,  duration: 1,
-      ease: "power1.out"})
-    .to('.hero-container', {y: '-250px'},"<")
+    .from(".hero-img", {scale: 1.5})
+    // .fromTo('.hero-container',{opacity: 0}, {opacity: 1,  duration: 1,
+    //   ease: "power1.out"})
+    // .to('.hero-container', {y: '-250px'},"<")
 
     aboutSvgTl.current = gsap.timeline({
       defaults: {
@@ -110,15 +112,34 @@ const Animations = ({ width, navClicked, appRef, slide1Ref, textSlide1Ref, slide
           start: '0% 100%', 
           end: '50% 90%',
           scrub: true,
+          // markers: true
       }
     })
     aboutSvgTl.current
     .fromTo(".scoop", {opacity: 0},{opacity: 1, rotation: 20})
-    .to(".bean1", {opacity: 1, x : "-40px", y: "10px", duration: 4.5})
-    .to(".bean2", {opacity: 1, x : "-70px", y: "10px", duration: 4.3}, "<")
-    .to(".bean3", {opacity: 1, x : "-60px", y: "20px", duration: 4.6}, "<") //furthest
-    .to(".bean4", {opacity: 1, x : "-30px", y: "10px" , duration: 3.9}, "<")
-    .to(".bean5", {opacity: 1, x : "-15px", y: "3px", duration: 4.4}, "<")
+    .to(".bean1", {opacity: 1, x : "-150px", y: "30px", duration: 4.5})
+    .to(".bean2", {opacity: 1, x : "-140px", y: "40px", duration: 4.3}, "<")
+    .to(".bean3", {opacity: 1, x : "-30px", y: "20px", duration: 4.6}, "<") //furthest
+    .to(".bean4", {opacity: 1, x : "-40px", y: "30px" , duration: 4.9}, "<")
+    .to(".bean5", {opacity: 1, x : "-60px", y: "30px", duration: 4.4}, "<")
+
+    menuTl.current = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".slide-menu",
+          start: '0% 90%', 
+          end: '60% 90%',
+          scrub: true
+      }
+    })
+
+    menuTl.current
+    .to("#tomato", {opacity: .9, rotation: 20, top: '50px', ease: 'power2.in', duration: 2})
+    .to("#leak", {opacity: .9, rotation: -5, top: '50px', left: '0px', ease: 'linear', duration: 2}, "<")
+    .to("#tomato", {rotation: 50, top: '150px', right: '5px', ease: 'linear', duration: 3 })
+    .to("#leak", {rotation: -30, top: '320px', left: '10px', ease: 'linear', duration: 3}, "<")
+    
+    // /* top: 180px; */
+    // .to("#", {opacity: 1, x : "-150px", y: "30px", duration: 3.5})
     // const beanEl = gsap.utils.toArray('.bean');
     //   beanEl.forEach((el) => {
     //       gsap.timeline({ 
@@ -146,6 +167,7 @@ const Animations = ({ width, navClicked, appRef, slide1Ref, textSlide1Ref, slide
     // .fromTo(".scoop", {x: -45, y: '-20%'}, {rotation: -20, transformOrigin: "right"}
   }, [])
 
+  
 
   useEffect(() => {
     navClicked && width < 768 ? navTl.current.play() : navTl.current.reverse()

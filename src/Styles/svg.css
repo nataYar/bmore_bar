@@ -1,3 +1,51 @@
+/* coffee leaf svg */
+.coffee-leaf-fill { fill: var(--beige-light)}
+
+.scoop-fill  { fill: var(--beige-light)}
+
+.cls-1, .cls-2, .cls-3 {
+  fill: var(--beige-light)
+}
+
+#avocado {
+    width: 100px;
+    position: absolute;
+    top: 390px;
+    left: 30px;
+    transform: rotate(-90deg);
+}
+.avocado-fill {
+    fill: #927c63;
+}
+
+#tomato {
+    opacity: 0.1;
+    width: 110px;
+    position: absolute;
+    top: 0px;
+    right: 39px;
+    z-index: 1;
+}
+.tomato-fill {
+    fill: var(--beige-deep)
+}
+
+#leak {
+    opacity: 0.1;
+    width: 110px;
+    position: absolute;
+    z-index: 1;
+    top:-10px;
+    left: 50px;
+    /* top: 180px; */
+    transform: rotate(10deg);
+}
+.leak-fill {
+    fill:var(--beige-deep);
+}
+
+
+
 .coffee-leaf {
     width: 100px;
     position: absolute;
@@ -9,11 +57,11 @@
 }
 
 .scoop {
-    width: 180px;
+    width: 240px;
     position: absolute;
     z-index: 2;
-    right: 5px;
-    top: -35px;
+    right: -5px;
+    top: -50px;
     transform: rotate(45deg);
     transform-origin: right;
 }
@@ -23,9 +71,6 @@
     position: absolute;
     z-index: 3;
     opacity: 0;
-    /* right: 100px;
-    top: -16px; */
-
     background-size:100% 100%;
     -o-background-size: 100% 100%;
     -webkit-background-size: 100% 100%;
@@ -33,11 +78,11 @@
 }
 .bean1 { 
     right: 140px;
-    top: 70px;
+    top: 80px;
 
     background-image: url(../images/svg/beans/bean1.svg);
-    width: 40px;
-    height: 24px;
+    width: 45px;
+    height: 27px;
     /* background-color: brown; */
 }
 .bean2 { 

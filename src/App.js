@@ -5,14 +5,19 @@ import Animations from "./animations.js";
 import './styles/App.css';
 import './styles/styles.css';
 import './styles/svg.css';
+import EventSlides from './components/EventSlides';
+import Avocado from "./images/svg/Avocado";
+import Leak from "./images/svg/Leak";
 import Menu from "./components/Menu";
 import Spoon from './images/svg/Spoon';
 import Quotes from "./images/svg/Quotes";
 import CoffeeLeaf from './images/svg/CoffeeLeaf';
+import Tomato from './images/svg/Tomato';
 import Scoop from "./images/svg/Scoop";
 // import CoffeeBean from "./images/svg/CofeeBeans2";
-import { default as logo } from './images/logo/logo_white.png';
-import { default as heroImg } from './images/hero/about_img_short.webp';
+import pic1 from './images/events/1.png'
+import logo from './images/logo/logo_white.png';
+import heroImg from './images/hero/about_img_short.webp';
 
 function App() {
   const [navClicked, setNavclicked] = useState(false)
@@ -106,10 +111,10 @@ function App() {
                 </div>
                 
                 <p className="font-regular pointer margin-btm-mid opacity-anim">Email: bmoreproteinpub@gmail.com</p>
-                <p className="font-regular pointer opacity-anim" href="tel:+12133060257">Phone: (213) 306-0257</p>
+                <a className="phone-number font-regular pointer opacity-anim" href="tel:+12133060257">Phone: (213) 306-0257</a>
             </div>
             <br />
-            <div className="margin-top-big">
+            <div className="find-us-section margin-top-big">
               <div className="width-100 popup-anim">
                 <h2 className="subheading font-fancy">Find Us</h2>
                 <div className=" spoon margin-auto margin-btm-big">
@@ -119,11 +124,11 @@ function App() {
               <p className="font-regular opacity-anim">
                   707 E Ocean Blvd D Long Beach, CA 90802
                 </p>
-
+            
               <div className="google-maps opacity-anim">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3316.7700278037464!2d-118.18831427199875!3d33.76660811890422!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dd310b3a6bbf29%3A0xcb4689f44a64d336!2sBmore%20Protein%20Pub!5e0!3m2!1sen!2sus!4v1677538487272!5m2!1sen!2sus" 
                 allowFullScreen="" referrerPolicy="no-referrer-when-downgrade"></iframe>
-                </div>
+              </div>
             </div>
           </div>
 
@@ -185,7 +190,7 @@ function App() {
             <div className="bean bean5" id='5'></div>
           </div>
             
-          <div className="chefsWord">
+          <div className="chefsWord popup-anim">
             <h3 className="font-fancy font-regular">Chef's Word</h3>
             <div className="spoon margin-btm-big ">
                 <Spoon color='#fff'/>
@@ -198,7 +203,7 @@ function App() {
           
           <div className="text font-mid opacity-anim margin-top-big">
             Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.
-          </div>
+          </div> 
 
             <div className="hero-container">
               <img className="hero-img width-100 radius-small"
@@ -223,9 +228,24 @@ function App() {
         <section className="width-100">
           <Menu />
         </section>
+
+        <section className="slide-events padding-slide" id="events">
+          <h2 className="subheading font-fancy margin-top-mid">Events</h2>
+          <div className="spoon margin-btm-big margin-auto">
+            <Spoon color='#55311c' />
+            </div>
+            <div className="upcoming-wrapper margin-btm-mid flex-col-center">
+                <h2 className="line-1 font-big margin-btm-mid">UPCOMING</h2>
+              <div className="pic-container radius-small">
+                <img className=""
+                src={pic1} alt="" />
+              </div> 
+            </div>
+            <EventSlides />
+        </section> 
       </article>
       <footer className="padding-5">
-        <h2 className="subheading font-fancy opacity-anim">Footer information, links, etc.</h2>
+        <h2 className="subheading font-fancy opacity-anim"></h2>
       </footer>
     </main>
   );

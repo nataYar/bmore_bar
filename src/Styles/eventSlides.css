@@ -1,0 +1,42 @@
+@import "./styles.css";
+
+.past-wrapper {
+    height: auto;
+    position: relative;
+  }
+
+.pic-container + p{
+  text-align: center;
+}
+
+.handlers {
+  display: flex;
+  align-items: center;
+}
+.handlers a{
+  margin: 0px 10px;
+  font-size: 30px;
+  cursor: pointer,
+}
+
+.dotsContainer{
+  display: flex;
+  justify-content: center;
+}
+
+.dot {
+  margin: 0 5px;
+  font-size: 30px;
+}
+
+.active-dot {
+  color: var(--brown-dark);
+}
+
+  @media screen and (min-width: 768px){
+    header { height: 40px;}
+    .pic-container {
+      width: 30%;
+      height: 40%;
+    }
+}

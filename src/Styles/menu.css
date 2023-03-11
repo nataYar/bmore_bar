@@ -3,6 +3,7 @@
 .slide-menu {
 background-color: var(--brown-deep);
 color: white;
+position: relative;
 }
 
 .menu-subnav {
@@ -12,6 +13,7 @@ color: white;
     padding: 10px;
     position: relative;
     z-index: 100;
+    
 }
 
 .menu-subnav li {
@@ -35,8 +37,6 @@ color: white;
 a.back-to-top {
     display: block;
     text-align: center;
-    margin-top: 24px;
-    margin-bottom: 48px;
     color: var(--orange-dark);
 }
 
@@ -67,3 +67,4 @@ a.back-to-top {
     -moz-background-size: cover;
     -o-background-size: cover; */
 }
+

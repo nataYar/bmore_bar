@@ -33,6 +33,7 @@ header {
   background-color: transparent;
   position: relative;
   z-index: 2;
+  width: 100vw;
 }
 
 .app_background {
@@ -42,13 +43,13 @@ header {
   left: 0%;
   right: 0%;
   bottom: 0%;
-  background-position: -70px;
+  background-position: -90px -40px;
   transform-origin: center;
   /* clip-path: polygon(50% 10%, 75% 25%, 50% 40%, 25% 25%); */
   background-image: url("../images/madewithlove.jpeg");
   /* background-image: url("../images/coffeemachine.jpeg"); */
   background-color: #111111;
-  height: 100vh;
+  height: 110vh;
   /* width: 800px; */
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover;
@@ -65,9 +66,8 @@ header {
 }
 
 .slide1_logo_container {
-  height: 8vh;
+  height: 100px;
   width: 70vw;
-  margin-top: 20%;
   margin-bottom: 10%;
   display: flex;
   justify-content: center;
@@ -191,7 +191,14 @@ a .sm-icon + div {
 .insta {
   background-image: url("../images/icons/instaicon.png");
 }
+.phone-number{
+  color: #ffffff;
+}
 
+.find-us-section{
+  position: relative;
+  z-index: 3;
+}
 .workday {
   color: rgb(255, 255, 255);
   margin-bottom: 15px;
@@ -236,7 +243,6 @@ a .sm-icon + div {
   text-align: center;
   color: transparent;
   color: #000;
-  -webkit-background-clip: text;
 }
 
 /* SLIDE  ABOUT */
@@ -246,6 +252,7 @@ a .sm-icon + div {
  color: #ffffff;
  position: relative;
 }
+
 .chefsWord{
   margin-top: 110px;
   margin-bottom: 50px;
@@ -259,32 +266,32 @@ a .sm-icon + div {
 }
 
 .slide-about .text {
-  /* text-align: justify; */
   position: relative;
   z-index: 3;
-  /* background-color: var( --beige-light); */
 }
 
 .hero-container {
   width: 55%;
-  position: absolute;
+  margin-left: auto;
+  /* position: absolute;
   bottom: 5%;
   right: 5%;
-  z-index: 0;
+  z-index: 0; */
+  overflow: hidden;
 }
 
 .hero-img {
  width: 100%
 }
 
-.quote-marks svg{
+.quote-marks svg {
   width: 60px;
   fill: white;
 }
 
 .quote {
   position: relative;
-  margin-top: 50%;
+  /* margin-top: 50%; */
   z-index: 2;
   color: var(--brown-dark);
   color: #ffffff;
@@ -294,19 +301,28 @@ a .sm-icon + div {
   color: var(--beige-light);
 }
 
+.slide-events {
+  background-color: var( --beige-mid);
+  color: var(--brown-dark);
+  color: #ffffff;
+  height: auto;
+}
+
+.slide-events .subheading {
+  color: var(--brown-dark);
+}
 
 footer {
   position: relative;
   z-index: 1;
   height: 20vh;
   width: 100vw;
-  background-color: rgb(18, 18, 18);
+  background-color: rgb(182, 165, 165);
 }
 
 @media screen and (min-width: 768px){
-  header {
-    height: 40px;
-  }
+  header { height: 40px;}
+  
   .google-maps {
     overflow: hidden;
     padding-bottom: 40%;
@@ -321,7 +337,6 @@ footer {
     justify-content: center;
     align-items:flex-start;
     gap: 2%;
-   
   }
 
   .location, .schedule {
