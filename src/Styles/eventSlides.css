@@ -16,7 +16,7 @@
 .handlers a{
   margin: 0px 10px;
   font-size: 30px;
-  cursor: pointer,
+  cursor: pointer; 
 }
 
 .dotsContainer{
@@ -30,7 +30,7 @@
 }
 
 .active-dot {
-  color: var(--brown-dark);
+  color: var(--brown-deep);
 }
 
   @media screen and (min-width: 768px){

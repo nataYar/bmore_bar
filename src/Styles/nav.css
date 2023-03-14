@@ -26,10 +26,22 @@
   opacity: 0;
 }
 
+.knife-container {
+  width: 100px;
+  height: 30px;
+}
+
 .nav-wrapper li {
   list-style-type: none;
-  padding: 5% 0;
+  padding: 20px 0;
   text-decoration: none;
+}
+
+.nav-wrapper li svg{
+  height: 130px;
+  width: 20px;
+  padding: 0;
+  margin: 0;
 }
 
 a.nav-item:hover {
@@ -38,7 +50,7 @@ a.nav-item:hover {
 
 a.nav-item {
   transition: all .3s ease-in;
-  color: var(--orange-light);
+  color: var(--beige-light);
 }
 
 .nav-item {
@@ -147,7 +159,7 @@ a.nav-item {
 
   .nav-icon { display: none }
 
-  /* .logo {left: 4.37rem } */
+  .knife-container{ display: none;}
 
   .nav-item {
       color: rgb(248, 248, 248);
@@ -173,6 +185,7 @@ a.nav-item {
       padding: 0%;
       margin-left:  2%;
       list-style-type: none;
+      
   }
 
   .nav-item {

@@ -7,20 +7,11 @@ import pic4 from '../images/events/4.png';
 const EventSlides = () => {
 const [slideIndex, setSlideIndex] = useState(0);
 
-const ref1 = useRef()
-const ref2 = useRef()
-const ref3 = useRef()
-
 const slides = [
   { url: pic2, title: "Lorem ipsum" },
   { url: pic3, title: "Lorem ipsum2" },
   { url: pic4, title: "Lorem ipsum3" },
 ];
-
-// useEffect(() => {
-//     showSlides(slideIndex);
-//     console.log(slideIndex)
-// }, [slideIndex])
 
   const goToPrevious = () => {
     const isFirstSlide = slideIndex === 0;
@@ -39,7 +30,7 @@ const slides = [
   };
 
   return (
-        <div className="past-wrapper margin-top-big width-100">
+        <div className="past-wrapper margin-top-big width-100 opacity-anim">
             <div className='slide-handler font-fancy-2 margin-btm-mid font-big flex-col-center'>
                <div className='flex-row handlers'>
                   <a className="prev" onClick={goToPrevious}>❮</a>
@@ -50,7 +41,6 @@ const slides = [
                {slides.map((slide, ind) => (
                   <div
                   className={ slideIndex == ind ? "active-dot dot" : "dot" }
-                  // className=''
                     key={ind}
                     onClick={() => goToSlide(ind)}
                   >
@@ -59,7 +49,7 @@ const slides = [
                 ))}
                </div>
             </div>
-            <div ref={ref1} className="pic-container width-100 pic-container-slide radius-small" id="1">
+            <div className="events-pic-container pic-container-slide radius-small" id="1">
                 <img className="active-slide" src={slides[slideIndex].url} alt="" />
                 </div> 
             <p className='margin-top-mid'>{slides[slideIndex].title} </p>

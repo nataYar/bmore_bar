@@ -9,19 +9,22 @@ import Tomato from '../images/svg/Tomato';
 import Leak from '../images/svg/Leak';
 import data from './data';
 
-const Menu = () => {
-const [optionFood, setOptionFood] = useState(true)
+import imgDrinks from '../images/interier/coffee.jpeg';
+import foodImg from '../images/interier/food.jpeg';
+
+const Menu = ({ foodOptionCallback, optionFood }) => {
+
 
 const MenuSubnav = (id) => (
     <ul className="menu-subnav flex-row margin-btm-big">
       <li>
         <a className={optionFood ? "current-option font-big": "option" } 
-        onClick={ () => setOptionFood(true)}
+        onClick={ () => foodOptionCallback(true)}
         > eat </a>
         </li>
       <li>
         <a  className={!optionFood ? "current-option font-big": "option" } 
-        onClick={ () => setOptionFood(false)} 
+        onClick={ () => foodOptionCallback(false)} 
         > drink</a>
         </li>
     </ul> 
@@ -30,10 +33,10 @@ const MenuSubnav = (id) => (
 
   return (
     <div id='slide-menu' className='slide-menu width-100 padding-slide flex-col-center'>
-      <div className="width-100 popup-anim margin-top-mid">
+      <div className="width-100 popup-anim margin-top-mid margin-btm-mid">
         <h2 className="subheading font-fancy" id="contacts">Menu</h2>
         <div className="spoon margin-auto margin-btm-mid">
-          <Spoon color='#dccdac' />
+          <Spoon color='#b59a7c' />
         </div>
       </div>
     <div id="menuStart"></div>
@@ -42,25 +45,39 @@ const MenuSubnav = (id) => (
     <ul className="menu-subnav index-100 flex-row margin-btm-big">
       <li>
         <a className={optionFood ? "current-option pointer index-100 pointer  font-big": "option pointer " } 
-        onClick={ () => setOptionFood(true)}
+        onClick={ () => foodOptionCallback(true)}
         > eat </a>
         </li>
       <li>
         <a  className={!optionFood ? "current-option index-100 pointer  font-big": " pointer option" } 
-        onClick={ () => setOptionFood(false)} 
+        onClick={ () => foodOptionCallback(false)} 
         > drink</a>
         </li>
     </ul> 
-    { optionFood ?  <Food /> : <Drinks /> }
+    
+    { optionFood ?  
+    <div className="menu-container">
+      <div className="menu-pic radius-small">
+        <img src={foodImg} alt="" />
+      </div>
+      <Food />
+    </div>  : 
+    <div className="menu-container">
+      <div className="menu-pic radius-small">
+        <img src={imgDrinks} alt="" />
+      </div>
+      <Drinks />
+    </div> 
+    }
     <ul className="menu-subnav flex-row margin-btm-big">
       <li>
         <a href="#menuStart" className={optionFood ? "current-option index-100 pointer  font-big": "option pointer " } 
-        onClick={ () => setOptionFood(true)}
+        onClick={ () => foodOptionCallback(true)}
         > eat </a>
         </li>
       <li>
         <a href="#menuStart"  className={!optionFood ? "current-option index-100 pointer font-big": "option pointer " } 
-        onClick={ () => setOptionFood(false)} 
+        onClick={ () => foodOptionCallback(false)} 
         > drink</a>
         </li>
     </ul> 

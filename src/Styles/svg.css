@@ -1,10 +1,16 @@
 /* coffee leaf svg */
 .coffee-leaf-fill { fill: var(--beige-light)}
 
-.scoop-fill  { fill: var(--beige-light)}
+.scoop-fill  { fill: var(--beige-mid)}
 
 .cls-1, .cls-2, .cls-3 {
   fill: var(--beige-light)
+}
+#knife { 
+   width: 100%;
+   height: 100%;
+    padding: 0;
+    margin: 0;
 }
 
 #avocado {
@@ -26,6 +32,7 @@
     right: 39px;
     z-index: 1;
 }
+
 .tomato-fill {
     fill: var(--beige-deep)
 }
@@ -35,16 +42,14 @@
     width: 110px;
     position: absolute;
     z-index: 1;
-    top:-10px;
+    top: -10px;
     left: 50px;
-    /* top: 180px; */
     transform: rotate(10deg);
 }
+
 .leak-fill {
     fill:var(--beige-deep);
 }
-
-
 
 .coffee-leaf {
     width: 100px;
@@ -57,19 +62,30 @@
 }
 
 .scoop {
-    width: 240px;
+    opacity: .3;
+    width: 230px;
     position: absolute;
     z-index: 2;
-    right: -5px;
-    top: -50px;
-    transform: rotate(45deg);
+    right: -10px;
+    top: -70px;
+    transform: rotate(40deg);
     transform-origin: right;
 }
-
-
-.bean {
+.bean-container { 
     position: absolute;
-    z-index: 3;
+    right: 110px;
+    top: 20px;
+    transform: rotate(40deg);
+
+    height: auto;
+    width: 120px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: start;
+}
+.bean {
+    position: relative;
     opacity: 0;
     background-size:100% 100%;
     -o-background-size: 100% 100%;
@@ -77,46 +93,32 @@
     background-size:cover;
 }
 .bean1 { 
-    right: 140px;
-    top: 80px;
-
+    /* background-color: blueviolet; */
     background-image: url(../images/svg/beans/bean1.svg);
     width: 45px;
     height: 27px;
-    /* background-color: brown; */
 }
 .bean2 { 
-    right: 130px;
-    top: 36px;
-
-    /* background-color: blueviolet; */
+    /* background-color: blue; */
     width: 44px;
     height: 27px;
     background-image: url(../images/svg/beans/bean2.svg);}
 
 .bean3 { 
-    right: 210px;
-    top: 66px;
-
-    /* background-color: aqua; */
+    /* background-color: brown; */
     width: 31px;
     height: 26px;
     background-image: url(../images/svg/beans/bean3.svg);}
 
 .bean4 { 
-    right: 200px;
-    top: 100px;
-
-    /* background-color: chartreuse; */
+    top: 10px;
+    /* background-color: aqua; */
     width: 30px;
     height: 30px;
     background-image: url(../images/svg/beans/bean4.svg);}
 
 .bean5 { 
-    right: 120px;
-    top: 100px;
-    /* background-color: blue; */
-
+    /* background-color: burlywood; */
     width: 40px;
     height: 23px;
     background-image: url(../images/svg/beans/bean5.svg);}
