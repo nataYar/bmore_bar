@@ -1,9 +1,9 @@
 @import './styles.css';
 
 .slide-menu {
-background-color: var(--brown-deep);
-color: white;
-position: relative;
+  background-color: var(--brown-deep);
+  color: white;
+  position: relative;
 }
 
 .slide-menu div .subheading{
@@ -106,4 +106,14 @@ a.back-to-top {
   .items .price {
     text-align: center;
   }
+
+  @media screen and (min-width: 768px){
+    .slide-menu {
+      background-color: var(--brown-deep);
+      color: white;
+      position: relative;
+      padding: 70px 25%;
+      }
+  }
+  
 

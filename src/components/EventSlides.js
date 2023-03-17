@@ -1,8 +1,8 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState } from 'react';
 import '../styles/eventSlides.css';
-import pic2 from '../images/events/2.png';
-import pic3 from '../images/events/3.png';
-import pic4 from '../images/events/4.png';
+import pic2 from '../images/events/2.webp';
+import pic3 from '../images/events/3.webp';
+import pic4 from '../images/events/4.webp';
 
 const EventSlides = () => {
 const [slideIndex, setSlideIndex] = useState(0);
@@ -30,7 +30,7 @@ const slides = [
   };
 
   return (
-        <div className="past-wrapper margin-top-big width-100 opacity-anim">
+        <div className="past-wrapper opacity-anim">
             <div className='slide-handler font-fancy-2 margin-btm-mid font-big flex-col-center'>
                <div className='flex-row handlers'>
                   <a className="prev" onClick={goToPrevious}>❮</a>
@@ -49,10 +49,10 @@ const slides = [
                 ))}
                </div>
             </div>
-            <div className="events-pic-container pic-container-slide radius-small" id="1">
+            <div className="events-pic-container radius-small" id="1">
                 <img className="active-slide" src={slides[slideIndex].url} alt="" />
                 </div> 
-            <p className='margin-top-mid'>{slides[slideIndex].title} </p>
+            {/* <p className='margin-top-mid'>{slides[slideIndex].title} </p> */}
         </div>
   )
 }

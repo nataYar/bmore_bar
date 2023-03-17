@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import '../styles/styles.css';
 import '../styles/svg.css';
 import '../styles/menu.css';
@@ -7,10 +7,9 @@ import Food from './Food';
 import Drinks from './Drinks';
 import Tomato from '../images/svg/Tomato';
 import Leak from '../images/svg/Leak';
-import data from './data';
 
-import imgDrinks from '../images/interier/coffee.jpeg';
-import foodImg from '../images/interier/food.jpeg';
+import imgDrinks from '../images/interier/coffee.webp';
+import foodImg from '../images/interier/food.webp';
 
 const Menu = ({ foodOptionCallback, optionFood }) => {
 
@@ -32,7 +31,7 @@ const MenuSubnav = (id) => (
 
 
   return (
-    <div id='slide-menu' className='slide-menu width-100 padding-slide flex-col-center'>
+    <div id='menu' className='slide-menu width-100 padding-slide flex-col-center'>
       <div className="width-100 popup-anim margin-top-mid margin-btm-mid">
         <h2 className="subheading font-fancy" id="contacts">Menu</h2>
         <div className="spoon margin-auto margin-btm-mid">

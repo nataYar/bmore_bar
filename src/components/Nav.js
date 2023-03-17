@@ -4,7 +4,7 @@ import '../styles/nav.css';
 import Knife from '../images/svg/Knife';
 import Scoop from '../images/svg/Scoop';
 
-const Nav = ({ toggleNavCallback, navClicked }) => {
+const Nav = ({ windowWidth, toggleNavCallback, navClicked }) => {
 
   return (
     <nav>
@@ -42,10 +42,12 @@ const Nav = ({ toggleNavCallback, navClicked }) => {
                 </a>
                 </li>
             <li className="flex-col-center" onClick={ toggleNavCallback }>
-                <a href="#slide-menu" className='nav-item nav-footer'>
+                <a href="#menu" className='nav-item nav-footer'>
                     menu
                 </a>
-                <div className='knife-container'><Knife color='#000'/></div>
+                <div className='knife-container'>
+                   <Knife />
+                   </div>
             </li>
             <li onClick={ toggleNavCallback }>
                 <a href="#events" className='nav-item nav-footer'>

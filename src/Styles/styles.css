@@ -4,11 +4,12 @@
   --orange-dark: #c9981d;
   --orange-bmore: #b08f2b;
   
+  --beige-lightest: #ffe6c6;
   --beige-light: #dccdac;
   --beige-slide: #D2B48c;
   --beige-mid: #b59a7c;
   --beige-dark: #a99175;
-  --beige-deep: #927c63;
+  --beige-deep: #927a5f;
 
   --brown-light: #b87b4f;
   --brown-mid: #674632;
@@ -75,8 +76,7 @@ font-style: normal; */
 
 /* FONT STYLINGS */
 .subheading {
-  color: var(--brown-deep);
-  /* color: var(--orange-light); */
+  color: var(--beige-lightest);
   font-size: 35px;
   text-align: center;
   font-weight: 900;
@@ -85,12 +85,8 @@ font-style: normal; */
   line-height: 25px;
 }
 
-
-/* COMMONLY USED _________________________________________ */
-  .slide-100-100 {
-    min-height: 100vh;
-    width: 100vw;
-  }
+/* COMMONLY USED ____________________________________ */
+  .slide-100-100 { width: 100%; }
   
   .flex-col-center {
     display: flex;
@@ -121,22 +117,19 @@ font-style: normal; */
     width: 100%;
   }
 
-
   /* PADDINGS, MARGINS */
 
   .margin-btm-small { margin-bottom: 10px;}
   .margin-btm-mid { margin-bottom: 20px; }
   .margin-btm-big { margin-bottom: 40px; }
-
   .margin-top-small { margin-top: 5px; }
   .margin-top-mid { margin-top: 20px; }
   .margin-top-big { margin-top: 40px; }
-
   .margin-auto {
     margin-left: auto;
     margin-right: auto;
   }
-  /*  */
+
   .padding-small {
     padding: 10px;
   }
@@ -152,11 +145,11 @@ font-style: normal; */
     border-radius: 8px;
   }
 
-  @media screen and (min-width: 768px){
+  @media screen and (min-width: 1200px){
     .flex-col-row{
       flex-flow: row-reverse wrap;
     }
     .padding-slide {
-      /* padding: 60px 15%; */
+      padding: 70px 15%;
     }
   }

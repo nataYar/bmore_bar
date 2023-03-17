@@ -63,7 +63,7 @@ a.nav-item {
 
 
 /* NAV ICON */
-.nav-icon{
+.nav-icon {
     width: 30px;
     height: 30px;
     position: absolute;
@@ -156,7 +156,7 @@ a.nav-item {
 
   /* for TABLETS and LAPTOPS */
 @media screen and (min-width: 786px) {
-
+  .knife-container { display: none}
   .nav-icon { display: none }
 
   .knife-container{ display: none;}

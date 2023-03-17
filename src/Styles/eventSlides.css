@@ -3,6 +3,10 @@
 .past-wrapper {
     height: auto;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
   }
 
 .pic-container + p{
@@ -25,18 +29,24 @@
 }
 
 .dot {
-  margin: 0 5px;
-  font-size: 30px;
+  margin: 0 8px;
+  font-size: 20px;
 }
 
 .active-dot {
   color: var(--brown-deep);
 }
 
-  @media screen and (min-width: 768px){
-    header { height: 40px;}
-    .pic-container {
-      width: 30%;
-      height: 40%;
-    }
+@media screen and (min-width: 768px){
+  .past-wrapper {
+    width: 47.5%;
+    margin-top: 0px;
+  }
+  .pic-container {
+    width: 100%;
+    height: 100%;
+  }
+  .slide-handler {
+    height: 90px;
+  }
 }
