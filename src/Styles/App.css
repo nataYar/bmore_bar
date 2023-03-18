@@ -51,22 +51,26 @@ body {
 .slide1 {
   position: relative;
   height: 100vh;
+  top: 0;
+  left: 0;
   width: 100%;
-}
-
-.slide1_logo_container {
-  height: 100px;
-  width: 70vw;
-  margin-bottom: 10%;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+.slide1_logo_container {
+  height: 100px;
+  width: 70%;
+  /* margin-bottom: 50px;
+  margin-top: 50px; */
+}
+
 .logo {
   transform-origin: center;
   background-color: transparent; 
-  width: 80vw;
+  width: 100%;
   background-repeat: no-repeat;
   background-size: contain; 
 }
@@ -75,12 +79,14 @@ body {
   position: absolute;
   bottom: 100px;
 }
+/* .text-block {
+  position: absolute;
+} */
 
-.text-block p {
-  color: var(--brown-deep);
+/* .text-block p {
   height: 1rem;
-  letter-spacing: 1px;
-}
+  letter-spacing: 2px;
+} */
 
 .btn-container {
   margin-top: 20px;
@@ -369,13 +375,13 @@ footer .icons {
 @media screen and (min-width: 768px){
   header { height: 40px;}
 
-  .logo {
-    transform-origin: center;
-    background-color: transparent; 
-    width: 500px;
-    background-repeat: no-repeat;
-    background-size: contain; 
+  .slide1_logo_container {
+    height: 100px;
+    width: 40%;
+    /* margin-bottom: 0px;
+    margin-top: 0px; */
   }
+  /* .text-block { display: none;} */
 
   .events-container {
     display: flex;
@@ -417,19 +423,14 @@ footer .icons {
   
   .g-pic {
     position: relative;
-    /* height: 285px;
-    overflow: hidden; */
-    /* display: flex;
-    justify-content: center; */
   } 
+
   .g-pic-3 { z-index: 0; }
 
   .g-pic img {
     display: block;
     width: 100%;
     height: auto;
-    /* margin-left: auto; */
-    /* margin-right: auto; */
   }
 
   .g-line { opacity: 0; }

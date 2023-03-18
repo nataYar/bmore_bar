@@ -18,7 +18,7 @@ import pic1 from './images/events/1.webp'
 import logo from './images/logo/logo_white.png';
 import heroImg from './images/hero/about_img_short.webp';
 import appBackground from './images/madewithlove.webp';
-import { g1, g2, g3, g4, g5, g6, g7, g8 } from './images/importsImg'
+import { g1, g2, g3, g5, g6, g7} from './images/importsImg'
 
 function App() {
   const [navClicked, setNavclicked] = useState(false)
@@ -66,9 +66,9 @@ function App() {
       <article className='app_content' ref={appRef}>
         <section className="slide1 flex-col-center" ref={slide1Ref} >
           <img className="app_background" src={ appBackground } alt="" />
-          <h1 className='slide1_logo_container'>
+          <div className='slide1_logo_container'>
             <img className='logo' src={logo} alt="bmore protein bar" />
-          </h1>
+          </div>
 
           {/* <div className="text-block flex-col-center" ref={textSlide1Ref}>
             <p className="popup-slide1 font-fancy margin-btm-mid">BE KIND</p>
