@@ -16,7 +16,7 @@ An animated website for a local bar
 - a modern responsive design using corporate's color palette.
 
 ## Challenges: 
-- separating the menus for quicker management and 
+- separating the menus between Components for quicker management.
 - useRef hook to trigger or kill animation timeline dynamically.
 -  refreshing the scrollTrigger called on a component’s state update to keep animations in place. 
 - incorporated Flexbox and media quieries to adjust layout according to a screen size. 

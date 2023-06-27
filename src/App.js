@@ -1,30 +1,73 @@
 import React from "react";
 import { useState, useRef, useEffect } from "react";
-import Nav  from './components/Nav'
-import Animations from "./animations.js";
 import './styles/App.css';
 import './styles/styles.css';
 import './styles/svg.css';
-
+import Nav  from './components/Nav'
+import Animations from "./animations.js";
 import EventSlides from './components/EventSlides';
 import Menu from "./components/Menu";
 import SlideInfo from "./components/SlideInfo";
+import { Gallery } from "./components/Gallery";
 
 import Spoon from './images/svg/Spoon';
 import Quotes from "./images/svg/Quotes";
 import Scoop from "./images/svg/Scoop";
+import Tomato from './images/svg/Tomato';
+import Leak from './images/svg/Leak';
 
-import pic1 from './images/events/1.webp'
-import logo from './images/logo/logo_white.png';
+import logo_white from './images/logo/logo_white.png';
+import logo_black from './images/logo/logo_black.png';
+import logo_orange from './images/logo/logo_orange.webp'
 import heroImg from './images/hero/about_img_short.webp';
 import appBackground from './images/madewithlove.webp';
-import { g1, g2, g3, g5, g6, g7} from './images/importsImg'
+
+import { db } from '../src/firebaseConfig';
+import { collection, onSnapshot } from "firebase/firestore";
 
 function App() {
   const [navClicked, setNavclicked] = useState(false)
   const [windowWidth, setWindowWidth] = useState(null)
   const [optionFood, setOptionFood] = useState(true)
 
+  const [categories, setCategories] = useState([]);
+  const [food, setFood] = useState([])
+  const [drinks, setDrinks] = useState([])
+  const [pictures, setPictures] = useState([])
+
+  useEffect(() => {
+    const eventsRef = collection(db, 'gallery');
+    const unsubscribe = onSnapshot(eventsRef, (snapshot) => {
+      const data = snapshot.docs.map((doc) => (
+        doc.data().url
+      ));
+      setPictures(data);
+    });
+    return unsubscribe;
+  }, []);
+
+ 
+  useEffect(() => {
+    onSnapshot(collection(db, 'categories'), (snapshot) => {
+      setCategories(
+        snapshot.docs.map((doc) => {
+          return {
+            id: doc.id,
+            name: doc.data().name,
+            price: doc.data().price,
+            note: doc.data().note,
+            category: doc.data().category,
+            items: doc.data().items
+          };
+        })
+      );
+    });
+  }, []);
+
+  useEffect(() => {
+    setFood(categories.filter(cat => cat.category==='food'))
+    setDrinks(categories.filter(cat => cat.category==='drinks'))
+  }, [categories])
 
   const foodOptionCallback = (arg) => { setOptionFood(arg)}
 
@@ -57,24 +100,18 @@ function App() {
         <Nav windowWidth={windowWidth} toggleNavCallback={toggleNav} navClicked={navClicked}  />
       </header>
       <Animations 
+      pictures={pictures}
       menuClicked={optionFood}
       scoopRef={scoopRef}
       width={windowWidth}
       navClicked={navClicked} appRef={appRef} slide1Ref={slide1Ref}  addressContainerRef={addressContainerRef} 
       textSlide1Ref={textSlide1Ref} hoursRef={hoursRef}/>
-      {/* <div className="app_background"></div> */}
       <article className='app_content' ref={appRef}>
         <section className="slide1 flex-col-center" ref={slide1Ref} >
           <img className="app_background" src={ appBackground } alt="" />
           <div className='slide1_logo_container'>
-            <img className='logo' src={logo} alt="bmore protein bar" />
+            <img className='logo' src={windowWidth < 768 ? logo_white : logo_black } alt="bmore protein bar" />
           </div>
-
-          {/* <div className="text-block flex-col-center" ref={textSlide1Ref}>
-            <p className="popup-slide1 font-fancy margin-btm-mid">BE KIND</p>
-            <p className="popup-slide1 font-fancy margin-btm-mid">BE STRONG</p>
-            <p className="popup-slide1 font-fancy margin-btm-mid">BE MORE</p>
-          </div> */}
           
           <div className="slide1-bottom-container flex-col-center opacity-anim">
             <div className="btn-container pointer">
@@ -89,30 +126,28 @@ function App() {
 
         <SlideInfo />
         
-        
-        <Menu foodOptionCallback={foodOptionCallback} optionFood={optionFood} />
-       
+        <div className="svg-wrapper">
+          <Tomato/>
+          <Leak />
+        </div>
+
+        <Menu 
+        foodOptionCallback={foodOptionCallback} optionFood={optionFood} 
+        categories={categories}
+        food={food} 
+        drinks={drinks}/>
 
         <section className="slide-events padding-slide" id="events">
           <div className="popup-anim">
             <h2 className="subheading font-fancy margin-top-mid">Events</h2>
             <div className="spoon margin-btm-big margin-auto">
             <Spoon color='#ffe6c6' />
-            </div></div>
-          
-          <div className="events-container">
-            <div className="upcoming-wrapper margin-btm-mid flex-col-center">
-                <h2 className="font-big margin-btm-mid opacity-anim">UPCOMING</h2>
-              <div className="events-pic-container radius-small opacity-anim">
-                <img src={pic1} alt="" />
-              </div> 
             </div>
-            <EventSlides />
           </div>
-            
+        <EventSlides />
         </section> 
 
-        <section className="slide-gallery flex-col-center" id="gallery" >
+        <section className="slide-gallery flex-col-center padding-slide" id="gallery" >
           <div className="popup-anim">
             <h2 className="subheading font-fancy margin-top-mid ">Gallery</h2>
             <div className="spoon margin-auto">
@@ -121,54 +156,26 @@ function App() {
           </div>
           
           <div className="gallery-container">
-            <div className="g-line line-1 font-fancy-2">Cocktails</div>
-            <div className="popup-anim g-pic g-pic-1 font-big font-fancy">
-              <img className=""
-              src={g1} alt="" />
-            </div> 
-            <div className="popup-anim g-pic g-pic-2 font-big font-fancy">
-              <img className=""
-              src={g7} alt="" />
-            </div> 
-
-          <div className="g-line line-2 font-fancy-2">Coffee</div>  
-          <div className="popup-anim g-pic g-pic-3 font-big font-fancy">
-            <img className=""
-            src={windowWidth > 768 ? g6 : g3} alt="" />
-          </div> 
-          <div className="popup-anim g-pic g-pic-4 font-big font-fancy">
-            <img className=""
-            src={g2} alt="" />
-          </div> 
-
-           <div className="g-line line-3 font-fancy-2">Pizza & Bagels</div>
-            <div className="popup-anim g-pic g-pic-5 font-big font-fancy">
-              <img className=""
-              src={g5} alt="" />
-            </div> 
-            <div className="popup-anim g-pic  g-pic-6 font-big font-fancy">
-              <img className=""
-              src={windowWidth > 768 ? g3 : g6} alt="" />
-            </div> 
+            <Gallery 
+            pictures={pictures}/>
           </div>
-          
         </section>
 
         <section className="slide-about padding-slide" id="about">
           <div className="slide-about_content">
-          <div className="chefsWord popup-anim">
-            <h3 className="font-fancy font-regular">Chef's Word</h3>
-            <div className="spoon margin-btm-big ">
-                <Spoon color='#fff'/>
-              </div>
-          </div>
-          
-          <h2 className="opacity-anim slide-about_content_subheading font-fancy" id="slide-about-sub">What We Believe In</h2>
+            <div className="chefsWord popup-anim">
+              <h3 className="font-fancy font-regular">Chef's Word</h3>
+              <div className="spoon margin-btm-big ">
+                  <Spoon color='#fff'/>
+                </div>
+            </div>
+            
+            <h2 className="opacity-anim slide-about_content_subheading font-fancy" id="slide-about-sub">What We Believe In</h2>
 
-          
-          <div className="text font-mid opacity-anim margin-top-big">
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.
-          </div> 
+            
+            <div className="text font-mid opacity-anim margin-top-big">
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.
+            </div> 
 
             <div className="hero-container">
               <img className="hero-img width-100 radius-small"
@@ -189,22 +196,21 @@ function App() {
                 </h4>
             </div>
           </div>
-          
-           
         </section> 
-       
       </article>
+      
       <footer>
-      <div className="scoop">
-              <Scoop/>
-            </div>
-            <div className="bean-container">
-                <div className="bean bean1" id='1'></div>
-                <div className="bean bean2" id='2'></div>
-                <div className="bean bean3" id='3'></div>
-                <div className="bean bean4" id='4'></div>
-                <div className="bean bean5" id='5'></div>
-            </div>
+        <div className="scoop">
+          <Scoop/>
+        </div>
+        <div className="bean-container">
+            <div className="bean bean1" id='1'></div>
+            <div className="bean bean2" id='2'></div>
+            <div className="bean bean3" id='3'></div>
+            <div className="bean bean4" id='4'></div>
+            <div className="bean bean5" id='5'></div>
+        </div>
+
         <div className='icons flex-row'>
             <a href="https://www.instagram.com/bmoreproteinpub" target="_blank" rel="noreferrer" >
               <div className='sm-icon insta' ></div>
@@ -226,7 +232,13 @@ function App() {
               </div>
             </a>
           </div>
-        <a className="phone-number font-regular pointer " href="tel:+12133060257">+1 (213) 306-0257</a>
+        <a className="phone-number font-regular pointer" href="tel:+12133060257">(213) 306-0257</a>
+        
+        <div className="nataYar-wrapper">
+        <a className="font-regular pointer" href="https://www.natayar.com/" target="_blank" rel="noreferrer">
+          Created by <div className='sm-icon nataYar'></div></a>
+        </div>
+        
       </footer>
       
     </main>

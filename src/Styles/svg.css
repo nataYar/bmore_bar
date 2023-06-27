@@ -30,7 +30,7 @@
     position: absolute;
     top: 0px;
     right: 39px;
-    z-index: 1;
+    z-index: 90;
 }
 
 .tomato-fill {
@@ -41,14 +41,29 @@
     opacity: 0.1;
     width: 110px;
     position: absolute;
-    z-index: 1;
-    top: -10px;
+    z-index: 90;
+    top: 350px;
     left: 50px;
     transform: rotate(10deg);
 }
 
 .leak-fill {
     fill:var(--beige-deep);
+}
+
+@media screen and (min-width: 768px){
+    #tomato {
+        opacity: 0;
+        width: 210px;
+        top: 0px;
+        right: 39px;
+    }
+    #leak {
+        opacity: 0;
+        width: 190px;
+        left: 0px;
+        
+    }
 }
 
 .coffee-leaf {

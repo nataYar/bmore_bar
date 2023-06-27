@@ -168,7 +168,7 @@ export const OJDetoxImmuneBooster = {
         item: 'Organic Greens + Probiotics',
         }
     ],
-    addition:'(Paired with Choice of one of the following ingredients above)'
+    note:'(Paired with Choice of one of the following ingredients above)'
     
 }
 

@@ -5,7 +5,6 @@
     color: white;
     position: relative;
     z-index: 2;
-    padding: 70px 5%;
   }
 
   .slide2 .subheading {
@@ -21,9 +20,13 @@
   .inline {
     display: inline-flex;
   }
+
   .email {
     margin-left: 10px;
     text-decoration: underline;
+    background-color: transparent !important;
+    border: none;
+    color: #fff;
   }
   
   .info-container {
@@ -75,11 +78,12 @@
   
   .google-maps {
     overflow: hidden;
-    padding-bottom: 56.25%;
+    height: 30vh;
+    /* padding-bottom: 56.25%; */
     position: relative;
     width: 100%;
     z-index: 3;
-    border-radius: 3px;
+    border-radius: 5px;
     margin: 10% 0%;
   }
   
@@ -110,14 +114,13 @@
 
   @media screen and (min-width: 768px){
     .slide2 {
-      padding: 100px 5%;
       display: flex;
-      flex-flow: row wrap;
-      justify-content: space-evenly;
-      align-items: baseline;
+      flex-flow: column wrap;
+      justify-content: center;
+      align-items: center;
     }
     .slide2_section  {
-      margin-bottom: 0px;
+      margin-bottom: 40px;
      }
 
     .google-maps {
@@ -129,11 +132,24 @@
       border-radius: 3px;
     }
 
-    .opening-hours {
-      /* margin-top: 0px; */
+    .opening-hours{
+      margin-top: 2rem;
     }
-    
-    .g-pic {
-      width: 30%
-    } 
   }
+
+  @media screen and (min-width: 1024px){
+  .slide2 {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .slide2_section  {
+    margin-bottom: 0px;
+   }
+
+   .opening-hours{
+    margin-top: 0rem;
+  }
+}

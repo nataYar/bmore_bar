@@ -3,33 +3,14 @@ import '../styles/styles.css';
 import '../styles/svg.css';
 import '../styles/menu.css';
 import Spoon from '../images/svg/Spoon';
-import Food from './Food';
-import Drinks from './Drinks';
-import Tomato from '../images/svg/Tomato';
-import Leak from '../images/svg/Leak';
+import MenuCategory from './MenuCategory';
+// import Tomato from '../images/svg/Tomato';
+// import Leak from '../images/svg/Leak';
 
 import imgDrinks from '../images/interier/coffee.webp';
 import foodImg from '../images/interier/food.webp';
 
-const Menu = ({ foodOptionCallback, optionFood }) => {
-
-
-const MenuSubnav = (id) => (
-    <ul className="menu-subnav flex-row margin-btm-big">
-      <li>
-        <a className={optionFood ? "current-option font-big": "option" } 
-        onClick={ () => foodOptionCallback(true)}
-        > eat </a>
-        </li>
-      <li>
-        <a  className={!optionFood ? "current-option font-big": "option" } 
-        onClick={ () => foodOptionCallback(false)} 
-        > drink</a>
-        </li>
-    </ul> 
-  );
-
-
+const Menu = ({  foodOptionCallback, optionFood, food, drinks }) => {
   return (
     <div id='menu' className='slide-menu width-100 padding-slide flex-col-center'>
       <div className="width-100 popup-anim margin-top-mid margin-btm-mid">
@@ -39,8 +20,8 @@ const MenuSubnav = (id) => (
         </div>
       </div>
     <div id="menuStart"></div>
-    <Tomato/>
-    <Leak />
+    {/* <Tomato/>
+    <Leak /> */}
     <ul className="menu-subnav index-100 flex-row margin-btm-big">
       <li>
         <a className={optionFood ? "current-option pointer index-100 pointer  font-big": "option pointer " } 
@@ -59,13 +40,14 @@ const MenuSubnav = (id) => (
       <div className="menu-pic radius-small">
         <img src={foodImg} alt="" />
       </div>
-      <Food />
-    </div>  : 
-    <div className="menu-container">
+      <MenuCategory categories={food} />
+    </div> 
+     : 
+     <div className="menu-container">
       <div className="menu-pic radius-small">
         <img src={imgDrinks} alt="" />
       </div>
-      <Drinks />
+      <MenuCategory categories={drinks} />
     </div> 
     }
     <ul className="menu-subnav flex-row margin-btm-big">

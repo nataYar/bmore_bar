@@ -145,11 +145,13 @@ font-style: normal; */
     border-radius: 8px;
   }
 
-  @media screen and (min-width: 1200px){
-    .flex-col-row{
-      flex-flow: row-reverse wrap;
-    }
+  @media screen and (min-width: 768px){
     .padding-slide {
-      padding: 70px 15%;
+      padding: 70px 80px;
     }
+  }
+  
+  @media screen and (min-width: 1200px){
+    .flex-col-row{ flex-flow: row-reverse wrap; }
+    .padding-slide { padding: 10% 200px; }
   }
