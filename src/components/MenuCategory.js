@@ -4,7 +4,9 @@ import '../styles/styles.css';
 const Menuitems = ({ categories }) => {
   return (
     <>
-    { categories.map((category) => (
+    { categories
+    .sort((a, b) => a.name.localeCompare(b.name)) // Sort categories alphabetically by name
+    .map((category) => (
         <div 
         className="items"
         key={category.id} 

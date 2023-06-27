@@ -20,8 +20,7 @@ const Menu = ({  foodOptionCallback, optionFood, food, drinks }) => {
         </div>
       </div>
     <div id="menuStart"></div>
-    {/* <Tomato/>
-    <Leak /> */}
+   
     <ul className="menu-subnav index-100 flex-row margin-btm-big">
       <li>
         <a className={optionFood ? "current-option pointer index-100 pointer  font-big": "option pointer " } 
